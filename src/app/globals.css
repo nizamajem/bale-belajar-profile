@@ -30,6 +30,13 @@ body::selection {
   color: #172033;
 }
 
+.surface-grid {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
 button,
 input,
 textarea {
@@ -89,6 +96,25 @@ textarea {
   }
 }
 
+@keyframes card-rise {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes meter-sweep {
+  0% {
+    transform: translateX(-35%);
+  }
+  100% {
+    transform: translateX(135%);
+  }
+}
+
 @keyframes dash {
   0% {
     stroke-dashoffset: 180;
@@ -126,6 +152,23 @@ textarea {
 .blink-soft {
   animation: blink-soft 4s ease-in-out infinite;
   transform-origin: center;
+}
+
+.card-rise {
+  animation: card-rise 4.5s ease-in-out infinite;
+}
+
+.meter-sweep {
+  overflow: hidden;
+  position: relative;
+}
+
+.meter-sweep::after {
+  animation: meter-sweep 2.8s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58), transparent);
+  content: "";
+  inset: 0;
+  position: absolute;
 }
 
 .path-line {
