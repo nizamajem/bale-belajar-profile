@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Loader2, Send } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Loader2, Send, ShieldCheck, Sparkles, UsersRound } from "lucide-react";
 
 export default function PilotPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -42,7 +42,7 @@ export default function PilotPage() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+    <main className="surface-grid min-h-screen px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <Link
           className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#2563eb]"
@@ -57,7 +57,7 @@ export default function PilotPage() {
             <p className="text-sm font-black uppercase text-[#f9c74f]">
               Pilot sekolah
             </p>
-            <h1 className="font-heading mt-3 text-4xl font-black leading-tight">
+            <h1 className="font-heading mt-3 text-3xl font-black leading-tight sm:text-4xl">
               Mulai dari satu kelas, satu asesmen, dan evaluasi bersama.
             </h1>
             <p className="mt-4 font-semibold leading-8 text-slate-300">
@@ -65,6 +65,21 @@ export default function PilotPage() {
               dashboard guru, dan laporan hasil tanpa mengganti sistem yang
               sudah berjalan.
             </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {[
+                [ShieldCheck, "Data rapi", "Input sekolah tercatat untuk follow up."],
+                [UsersRound, "Pilot ringan", "Mulai dari satu kelas dulu."],
+                [Sparkles, "Pendampingan", "Tim bantu susun asesmen awal."],
+              ].map(([Icon, title, text]) => (
+                <div className="rounded-[8px] bg-white/10 p-4" key={title as string}>
+                  <Icon className="text-[#22c55e]" size={22} />
+                  <p className="font-heading mt-3 font-black">{title as string}</p>
+                  <p className="mt-1 text-sm font-semibold leading-6 text-slate-300">
+                    {text as string}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="p-6 sm:p-8">
@@ -82,12 +97,44 @@ export default function PilotPage() {
             ) : (
               <form className="space-y-4" onSubmit={submitPilot}>
                 <input className="hidden" name="website" tabIndex={-1} />
-                <Field label="Nama sekolah" name="schoolName" required />
-                <Field label="Nama penghubung" name="contactName" required />
-                <Field label="Jabatan" name="position" />
-                <Field label="Nomor WhatsApp" name="phone" required />
-                <Field label="Email" name="email" type="email" />
-                <Field label="Jumlah siswa" name="studentCount" type="number" />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field
+                    autoComplete="organization"
+                    className="sm:col-span-2"
+                    label="Nama sekolah"
+                    name="schoolName"
+                    required
+                  />
+                  <Field
+                    autoComplete="name"
+                    label="Nama penghubung"
+                    name="contactName"
+                    required
+                  />
+                  <Field autoComplete="organization-title" label="Jabatan" name="position" />
+                  <Field
+                    autoComplete="tel"
+                    inputMode="tel"
+                    label="Nomor WhatsApp"
+                    name="phone"
+                    required
+                    type="tel"
+                  />
+                  <Field
+                    autoComplete="email"
+                    inputMode="email"
+                    label="Email"
+                    name="email"
+                    type="email"
+                  />
+                  <Field
+                    inputMode="numeric"
+                    label="Jumlah siswa"
+                    min={1}
+                    name="studentCount"
+                    type="number"
+                  />
+                </div>
                 <label className="block">
                   <span className="mb-2 block text-sm font-black text-slate-600">
                     Pesan
@@ -121,23 +168,34 @@ export default function PilotPage() {
 }
 
 function Field({
+  autoComplete,
+  className = "",
+  inputMode,
   label,
+  min,
   name,
   required,
   type = "text",
 }: {
+  autoComplete?: string;
+  className?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
   label: string;
+  min?: number;
   name: string;
   required?: boolean;
   type?: string;
 }) {
   return (
-    <label className="block">
+    <label className={`block ${className}`}>
       <span className="mb-2 block text-sm font-black text-slate-600">
         {label}
       </span>
       <input
         className="w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
+        autoComplete={autoComplete}
+        inputMode={inputMode}
+        min={min}
         name={name}
         required={required}
         type={type}

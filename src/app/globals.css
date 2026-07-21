@@ -30,6 +30,18 @@ body::selection {
   color: #172033;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
 .surface-grid {
   background-image:
     linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
@@ -174,6 +186,19 @@ textarea {
 .path-line {
   animation: dash 2.4s ease-in-out infinite alternate;
   stroke-dasharray: 180;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance-soft {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 @media (prefers-reduced-motion: reduce) {

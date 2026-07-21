@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen px-4 py-8 sm:px-6 lg:px-8">
+    <main className="surface-grid min-h-screen px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <section className="mx-auto max-w-3xl rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <Link
           className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#2563eb]"
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <p className="text-sm font-black uppercase text-[#2563eb]">
           Tentang BaleBelajar
         </p>
-        <h1 className="font-heading mt-2 text-4xl font-black">
+        <h1 className="font-heading mt-2 text-3xl font-black leading-tight sm:text-4xl">
           Platform asesmen diagnostik untuk tindak lanjut belajar.
         </h1>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
@@ -27,4 +27,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
