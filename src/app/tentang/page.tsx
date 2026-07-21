@@ -16,12 +16,14 @@ export default function AboutPage() {
           Tentang BaleBelajar
         </p>
         <h1 className="font-heading mt-2 text-3xl font-black leading-tight sm:text-4xl">
-          Platform asesmen diagnostik untuk tindak lanjut belajar.
+          Kami membantu sekolah melihat kebutuhan belajar siswa dengan lebih jelas.
         </h1>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
-          BaleBelajar membantu sekolah memahami kemampuan siswa berdasarkan
-          kompetensi, bukan hanya nilai total. Hasil asesmen dipakai untuk
-          rekomendasi belajar, remedial, dan laporan orang tua.
+          BaleBelajar dibangun untuk membantu guru dan sekolah mengambil
+          keputusan belajar berdasarkan data kompetensi, bukan hanya nilai
+          akhir. Hasil asesmen dirancang agar mudah dibaca, bisa
+          ditindaklanjuti, dan tetap menggunakan bahasa yang positif untuk
+          siswa.
         </p>
       </section>
     </main>

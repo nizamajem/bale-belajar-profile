@@ -16,9 +16,10 @@ export default function TermsPage() {
           Ketentuan Penggunaan
         </h1>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
-          BaleBelajar digunakan sebagai alat bantu asesmen diagnostik dan
-          rekomendasi belajar. Hasil bukan pengganti nilai rapor atau keputusan
-          akademik resmi sekolah.
+          BaleBelajar digunakan sebagai alat bantu asesmen diagnostik,
+          pemetaan kompetensi, dan rekomendasi tindak lanjut belajar. Hasil
+          platform membantu proses evaluasi, namun tidak menggantikan nilai
+          rapor atau keputusan akademik resmi sekolah.
         </p>
       </section>
     </main>

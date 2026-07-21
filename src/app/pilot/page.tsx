@@ -35,7 +35,7 @@ export default function PilotPage() {
 
       setSubmitted(true);
     } catch {
-      setError("Pengajuan belum bisa dikirim. Pastikan backend berjalan di port 4000.");
+      setError("Pengajuan belum terkirim. Pastikan koneksi stabil atau hubungi kami melalui kontak BaleBelajar.");
     } finally {
       setLoading(false);
     }
@@ -58,18 +58,18 @@ export default function PilotPage() {
               Pilot sekolah
             </p>
             <h1 className="font-heading mt-3 text-3xl font-black leading-tight sm:text-4xl">
-              Mulai dari satu kelas, satu asesmen, dan evaluasi bersama.
+              Coba BaleBelajar di satu kelas sebelum menerapkan lebih luas.
             </h1>
             <p className="mt-4 font-semibold leading-8 text-slate-300">
-              Tim BaleBelajar akan membantu sekolah mencoba asesmen diagnostik,
-              dashboard guru, dan laporan hasil tanpa mengganti sistem yang
-              sudah berjalan.
+              Ceritakan kebutuhan sekolah Anda. Tim kami akan membantu
+              menyiapkan diskusi pilot, memilih kelas awal, dan menentukan
+              asesmen diagnostik yang paling relevan.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {[
-                [ShieldCheck, "Data rapi", "Input sekolah tercatat untuk follow up."],
-                [UsersRound, "Pilot ringan", "Mulai dari satu kelas dulu."],
-                [Sparkles, "Pendampingan", "Tim bantu susun asesmen awal."],
+                [ShieldCheck, "Terukur", "Pilot dimulai dengan tujuan dan kelas yang jelas."],
+                [UsersRound, "Ringan", "Tidak perlu mengganti sistem sekolah yang sudah berjalan."],
+                [Sparkles, "Didampingi", "Tim membantu membaca hasil dan langkah tindak lanjut."],
               ].map(([Icon, title, text]) => (
                 <div className="rounded-[8px] bg-white/10 p-4" key={title as string}>
                   <Icon className="text-[#22c55e]" size={22} />
@@ -87,11 +87,11 @@ export default function PilotPage() {
               <div className="rounded-[8px] bg-[#f0fdf4] p-6 text-[#166534]">
                 <CheckCircle2 size={36} />
                 <h2 className="font-heading mt-4 text-2xl font-black">
-                  Terima kasih.
+                  Pengajuan berhasil dikirim.
                 </h2>
                 <p className="mt-2 font-bold leading-7">
-                  Tim BaleBelajar akan menghubungi Anda untuk mendiskusikan
-                  pilot sekolah.
+                  Tim BaleBelajar akan menghubungi Anda dalam 1-2 hari kerja
+                  untuk menjadwalkan diskusi pilot.
                 </p>
               </div>
             ) : (
@@ -142,7 +142,7 @@ export default function PilotPage() {
                   <textarea
                     className="min-h-28 w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
                     name="message"
-                    placeholder="Ceritakan kebutuhan sekolah secara singkat"
+                    placeholder="Contoh: ingin memetakan kemampuan Matematika kelas VI sebelum remedial"
                   />
                 </label>
                 {error ? (
@@ -156,7 +156,7 @@ export default function PilotPage() {
                   type="submit"
                 >
                   {loading ? <Loader2 className="animate-spin" size={19} /> : <Send size={19} />}
-                  Kirim pengajuan
+                  Kirim Pengajuan Pilot
                 </button>
               </form>
             )}

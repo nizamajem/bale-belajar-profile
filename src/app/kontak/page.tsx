@@ -14,7 +14,7 @@ export default function ContactPage() {
         </Link>
         <p className="text-sm font-black uppercase text-[#22c55e]">Kontak</p>
         <h1 className="font-heading mt-2 text-3xl font-black leading-tight sm:text-4xl">
-          Diskusikan kebutuhan sekolah Anda.
+          Diskusikan pilot BaleBelajar untuk sekolah Anda.
         </h1>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-[8px] bg-[#f8fafc] p-5">
@@ -25,7 +25,7 @@ export default function ContactPage() {
           <div className="rounded-[8px] bg-[#f8fafc] p-5">
             <MessageCircle className="text-[#22c55e]" size={26} />
             <p className="font-heading mt-4 text-xl font-black">WhatsApp</p>
-            <p className="mt-1 font-bold text-slate-600">Isi nomor di .env</p>
+            <p className="mt-1 font-bold text-slate-600">Aktifkan nomor resmi saat deployment</p>
           </div>
         </div>
       </section>

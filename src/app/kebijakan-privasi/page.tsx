@@ -16,9 +16,10 @@ export default function PrivacyPage() {
           Kebijakan Privasi
         </h1>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
-          BaleBelajar hanya mengumpulkan data yang diperlukan untuk pelaksanaan
-          asesmen, pelaporan hasil, dan komunikasi pilot sekolah. Data siswa
-          harus dikelola sesuai izin sekolah dan ketentuan yang berlaku.
+          BaleBelajar hanya mengumpulkan data yang diperlukan untuk
+          pelaksanaan asesmen, pemetaan kemampuan, pelaporan hasil, dan
+          komunikasi pilot sekolah. Data siswa harus dikelola berdasarkan izin
+          sekolah dan ketentuan perlindungan data yang berlaku.
         </p>
       </section>
     </main>

@@ -11,6 +11,7 @@ import {
   Clock3,
   GraduationCap,
   HeartHandshake,
+  HelpCircle,
   LineChart,
   MessageCircle,
   School,
@@ -24,46 +25,65 @@ import {
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 const workflow = [
-  ["Asesmen", "Siswa mengerjakan asesmen singkat per kompetensi."],
-  ["Pemetaan", "Sistem membaca pola kekuatan dan materi prioritas."],
-  ["Heatmap", "Guru melihat peta kelas dalam satu layar."],
-  ["Remedial", "Kelompok latihan dibuat berdasarkan data."],
-  ["Laporan", "Orang tua menerima ringkasan yang mudah dipahami."],
+  ["Asesmen", "Siswa mengerjakan asesmen singkat yang dipetakan per kompetensi."],
+  ["Pemetaan", "Sistem merangkum kekuatan, miskonsepsi, dan materi prioritas."],
+  ["Heatmap", "Guru melihat kondisi kelas tanpa membaca spreadsheet manual."],
+  ["Remedial", "Kelompok latihan disusun berdasarkan kebutuhan belajar yang serupa."],
+  ["Laporan", "Sekolah mendapat ringkasan yang mudah dibaca dan siap dibahas."],
 ];
 
 const trustItems = [
-  "Bahasa Indonesia",
-  "Mobile-first untuk siswa",
-  "Dashboard guru siap pilot",
-  "Rekomendasi berbasis aturan",
+  "Mulai dari 1 kelas",
+  "Dashboard guru siap pakai",
+  "Data kompetensi, bukan hanya nilai akhir",
+  "Bahasa laporan mudah dipahami",
 ];
 
 const problemCards = [
-  "Nilai total tidak menunjukkan detail kesulitan siswa.",
-  "Guru punya waktu terbatas untuk membaca pola jawaban.",
-  "Siswa sering tidak tahu harus belajar dari mana.",
-  "Remedial belum selalu berbasis peta kompetensi.",
+  "Nilai akhir belum menunjukkan kompetensi mana yang perlu diperkuat.",
+  "Guru butuh cara cepat membaca pola jawaban satu kelas.",
+  "Siswa perlu arahan belajar yang spesifik, bukan sekadar skor.",
+  "Program remedial lebih efektif jika dimulai dari peta kebutuhan nyata.",
 ];
 
 const benefitCards = [
   {
     icon: GraduationCap,
     title: "Untuk Siswa",
-    text: "Melihat kekuatan, materi yang perlu latihan, dan rencana belajar tujuh hari.",
+    text: "Menerima hasil dengan bahasa positif: apa yang sudah dikuasai dan materi apa yang perlu dilatih berikutnya.",
     tone: "bg-[#eff6ff] text-[#2563eb]",
   },
   {
     icon: UsersRound,
     title: "Untuk Guru",
-    text: "Melihat heatmap kelas, siswa prioritas, dan kelompok remedial tanpa hitung manual.",
+    text: "Melihat heatmap kelas, siswa prioritas, dan kelompok remedial tanpa menghitung ulang dari nilai mentah.",
     tone: "bg-[#f0fdf4] text-[#16a34a]",
   },
   {
     icon: School,
     title: "Untuk Sekolah",
-    text: "Memantau hasil pilot, melihat peta kemampuan kelas, dan menyiapkan laporan program.",
+    text: "Memiliki data awal yang lebih jelas untuk mengevaluasi program belajar dan komunikasi dengan orang tua.",
     tone: "bg-[#fff7ed] text-[#c2410c]",
   },
+];
+
+const faqs = [
+  [
+    "Apakah sekolah harus mengganti sistem yang sudah berjalan?",
+    "Tidak. Pilot BaleBelajar bisa dimulai dari satu kelas dan satu asesmen diagnostik tanpa mengganggu sistem akademik yang sudah digunakan sekolah.",
+  ],
+  [
+    "Berapa lama pilot bisa dijalankan?",
+    "Pilot awal dirancang singkat: sekolah menentukan kelas, guru memilih asesmen, siswa mengerjakan, lalu hasilnya dievaluasi bersama.",
+  ],
+  [
+    "Apa yang diterima guru setelah asesmen?",
+    "Guru mendapat ringkasan skor, peta kompetensi, siswa prioritas, dan rekomendasi tindak lanjut yang bisa dipakai untuk remedial atau pengayaan.",
+  ],
+  [
+    "Apakah hasilnya mudah dipahami orang tua?",
+    "Ya. Bahasa laporan dibuat positif dan praktis agar orang tua memahami posisi belajar anak tanpa istilah teknis yang berlebihan.",
+  ],
 ];
 
 export default function HomePage() {
@@ -78,6 +98,7 @@ export default function HomePage() {
       <Benefits />
       <DashboardSection />
       <PilotPackage />
+      <FAQSection />
       <PilotSection />
       <Footer />
     </main>
@@ -92,23 +113,23 @@ function Hero() {
       <div className="absolute left-1/2 top-12 h-[360px] w-[min(980px,92vw)] -translate-x-1/2 rounded-full border border-white/80 bg-white/30 blur-3xl sm:h-[520px]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 pb-12 pt-7 sm:px-6 md:grid-cols-[1.02fr_0.98fr] md:pt-8 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="min-w-0 max-w-3xl">
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#bfdbfe] bg-white/92 px-4 py-2 text-xs font-black text-[#1d4ed8] shadow-sm sm:text-sm"
+            className="mb-5 inline-flex max-w-full items-start gap-2 rounded-full border border-[#bfdbfe] bg-white/92 px-3 py-2 text-xs font-black leading-5 text-[#1d4ed8] shadow-sm sm:items-center sm:px-4 sm:text-sm"
             initial={{ opacity: 0, y: 14 }}
           >
             <Sparkles className="shrink-0" size={17} />
-            <span className="min-w-0">Asesmen diagnostik untuk keputusan belajar yang lebih jelas</span>
+            <span className="min-w-0">Platform asesmen diagnostik untuk sekolah yang ingin mengambil keputusan berbasis data</span>
           </motion.div>
 
           <motion.h1
             animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-[2.55rem] font-black leading-[1.04] text-[#172033] min-[380px]:text-5xl sm:text-6xl lg:text-7xl"
+            className="hero-title text-balance-soft font-heading font-black leading-[1.04] text-[#172033]"
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.06 }}
           >
-            Kenali kebutuhan belajar siswa sebelum menentukan langkah berikutnya.
+            Peta kemampuan siswa yang langsung bisa dipakai guru.
           </motion.h1>
 
           <motion.p
@@ -117,8 +138,9 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.12 }}
           >
-            BaleBelajar mengubah hasil asesmen menjadi peta kemampuan, prioritas
-            belajar, dan rekomendasi remedial yang bisa langsung dipakai guru.
+            BaleBelajar membantu sekolah menjalankan asesmen diagnostik,
+            membaca pola kesulitan kelas, dan menyusun tindak lanjut belajar
+            tanpa proses manual yang melelahkan.
           </motion.p>
 
           <motion.div
@@ -131,20 +153,20 @@ function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-6 py-4 font-heading font-black text-white shadow-[0_8px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
-              Ajukan Pilot Gratis
+              Ajukan Pilot 1 Kelas
               <ArrowRight size={19} />
             </Link>
             <a
               className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-6 py-4 font-heading font-black text-slate-700 shadow-[0_8px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="#cara-kerja"
             >
-              Lihat Cara Kerja
+              Lihat Alur Platform
             </a>
           </motion.div>
 
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3"
+            className="mt-7 grid max-w-xl grid-cols-1 gap-2 min-[380px]:grid-cols-3 sm:gap-3"
             initial={{ opacity: 0, y: 16 }}
             transition={{ delay: 0.24 }}
           >
@@ -182,7 +204,7 @@ function Hero() {
 
         <motion.div
           animate={{ opacity: 1, scale: 1 }}
-          className="relative"
+          className="relative min-w-0"
           initial={{ opacity: 0, scale: 0.96 }}
           transition={{ delay: 0.16 }}
         >
@@ -199,12 +221,13 @@ function Navbar() {
     ["Cara Kerja", "#cara-kerja"],
     ["Manfaat", "#manfaat"],
     ["Dashboard", "#dashboard"],
+    ["FAQ", "#faq"],
     ["Tentang", "/tentang"],
     ["Kontak", "/kontak"],
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/88 backdrop-blur">
+    <header className="sticky top-0 z-40 max-w-full border-b border-slate-200 bg-white/88 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link className="flex min-w-0 items-center gap-3" href="/">
           <span className="grid size-11 place-items-center rounded-[8px] bg-[#22c55e] text-white shadow-[0_6px_0_#129447]">
@@ -217,6 +240,7 @@ function Navbar() {
           <a href="#cara-kerja">Cara Kerja</a>
           <a href="#manfaat">Manfaat</a>
           <a href="#dashboard">Dashboard</a>
+          <a href="#faq">FAQ</a>
           <Link href="/tentang">Tentang</Link>
           <Link href="/kontak">Kontak</Link>
         </div>
@@ -227,16 +251,22 @@ function Navbar() {
           >
             Ajukan Pilot
           </Link>
+          <Link
+            className="rounded-[8px] bg-[#22c55e] px-3 py-3 font-heading text-xs font-black text-white shadow-[0_5px_0_#129447] sm:hidden"
+            href="/pilot"
+          >
+            Pilot
+          </Link>
           <a
             className="rounded-[8px] border-2 border-slate-200 bg-white px-3 py-3 font-heading text-xs font-black text-slate-700 shadow-[0_5px_0_#d8e2ef] sm:px-4 sm:text-sm"
             href={`${appUrl}/login`}
           >
-            Masuk Platform
+            Masuk
           </a>
         </div>
       </nav>
-      <div className="hide-scrollbar border-t border-slate-100 px-4 py-2 md:hidden">
-        <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto">
+      <div className="border-t border-slate-100 px-4 py-2 md:hidden">
+        <div className="hide-scrollbar mx-auto flex max-w-7xl gap-2 overflow-x-auto">
           {mobileLinks.map(([label, href]) =>
             href.startsWith("/") ? (
               <Link
@@ -281,7 +311,7 @@ function HeroMockup() {
   const heatmap = [92, 76, 58, 84, 88, 62, 54, 78, 95, 86, 80, 68];
 
   return (
-    <div className="float-soft relative mx-auto w-full max-w-[590px] rounded-[8px] border border-slate-200 bg-white p-2 shadow-2xl sm:p-4">
+    <div className="float-soft relative mx-auto w-full max-w-[590px] overflow-hidden rounded-[8px] border border-slate-200 bg-white p-2 shadow-2xl sm:p-4">
       <div className="card-rise absolute -right-5 top-16 hidden rounded-[8px] bg-white px-4 py-3 shadow-xl sm:block">
         <p className="text-xs font-black uppercase text-slate-400">Auto rekomendasi</p>
         <p className="font-heading text-lg font-black text-[#22c55e]">3 prioritas</p>
@@ -303,23 +333,23 @@ function HeroMockup() {
         </div>
 
         <div className="rounded-[8px] bg-white p-3">
-          <div className="hide-scrollbar overflow-x-auto">
-            <div className="min-w-[460px]">
-              <div className="mb-3 grid grid-cols-[74px_repeat(4,minmax(72px,1fr))] gap-2 text-xs font-black text-slate-400">
+          <div className="min-w-0 overflow-hidden">
+            <div className="w-full">
+              <div className="mb-3 grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 text-[10px] font-black text-slate-400 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2 min-[390px]:text-xs">
                 <span>Siswa</span>
                 <span>Pecahan</span>
                 <span>Perband.</span>
                 <span>Data</span>
                 <span>Bangun</span>
               </div>
-              <div className="grid grid-cols-[74px_repeat(4,minmax(72px,1fr))] gap-2">
+              <div className="grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2">
                 {["Aulia", "Bima", "Citra"].map((name, row) => (
                   <div className="contents" key={name}>
-                    <div className="rounded-[8px] bg-[#f8fafc] px-2 py-3 text-xs font-black">{name}</div>
+                    <div className="truncate rounded-[8px] bg-[#f8fafc] px-1.5 py-3 text-[11px] font-black min-[390px]:px-2 min-[390px]:text-xs">{name}</div>
                     {heatmap.slice(row * 4, row * 4 + 4).map((score, index) => (
                       <motion.div
                         className={[
-                          "rounded-[8px] px-2 py-3 text-center font-heading font-black text-white shadow-sm",
+                          "rounded-[8px] px-1 py-3 text-center font-heading text-sm font-black text-white shadow-sm min-[390px]:px-2",
                           score >= 80 && "bg-[#22c55e]",
                           score >= 60 && score < 80 && "bg-[#f9c74f] text-[#172033]",
                           score < 60 && "bg-[#ff6b6b]",
@@ -410,12 +440,13 @@ function Problems() {
           <p className="text-sm font-black uppercase text-[#ff8a00]">
             Masalah yang sering terjadi
           </p>
-          <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
-            Nilai total belum cukup menjelaskan kebutuhan siswa.
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Nilai akhir tidak cukup untuk menentukan tindak lanjut belajar.
           </h2>
           <p className="mt-4 font-semibold leading-8 text-slate-600">
-            BaleBelajar memecah hasil asesmen ke level kompetensi agar guru bisa
-            langsung menentukan tindak lanjut.
+            Guru membutuhkan data yang lebih rinci: kompetensi mana yang sudah
+            dikuasai, siswa mana yang butuh bantuan, dan materi apa yang perlu
+            diprioritaskan.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -448,8 +479,8 @@ function Workflow() {
       <div className="absolute inset-x-0 top-0 h-px bg-white/20" />
       <div className="mx-auto max-w-7xl">
         <p className="text-sm font-black uppercase text-[#f9c74f]">Cara kerja</p>
-        <h2 className="font-heading mt-2 max-w-3xl text-3xl font-black sm:text-4xl">
-          Satu alur dari asesmen sampai tindak lanjut.
+        <h2 className="section-title text-balance-soft font-heading mt-2 max-w-3xl font-black">
+          Dari asesmen sampai rekomendasi, semuanya dalam alur yang mudah diikuti.
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {workflow.map(([title, text], index) => (
@@ -482,8 +513,8 @@ function Benefits() {
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="manfaat">
       <div className="mb-7 max-w-3xl">
         <p className="text-sm font-black uppercase text-[#2563eb]">Manfaat</p>
-        <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
-          Dibuat untuk siswa, guru, dan sekolah.
+        <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+          Dibuat untuk keputusan belajar yang lebih cepat dan manusiawi.
         </h2>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -519,12 +550,12 @@ function DashboardSection() {
         <p className="text-sm font-black uppercase text-[#22c55e]">
           Preview dashboard
         </p>
-        <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
-          Guru melihat data yang bisa langsung ditindaklanjuti.
+        <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+          Dashboard guru yang fokus pada tindakan, bukan sekadar angka.
         </h2>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
-          Heatmap menunjukkan siapa yang sudah menguasai materi, siapa yang
-          sedang berkembang, dan siapa yang perlu latihan.
+          Heatmap membantu guru melihat siswa prioritas, kompetensi yang perlu
+          diperkuat, dan kelompok belajar yang paling masuk akal.
         </p>
       </div>
       <DashboardPreview />
@@ -560,11 +591,11 @@ function DashboardPreview() {
       <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white sm:p-5">
         <HeartHandshake className="text-[#f9c74f]" size={28} />
         <h3 className="font-heading mt-4 text-2xl font-black">
-          Kelompok remedial otomatis
+          Kelompok remedial berbasis kebutuhan
         </h3>
         <p className="mt-2 font-semibold leading-7 text-slate-300">
-          Guru dapat melihat siswa dengan kebutuhan latihan serupa tanpa
-          menghitung manual dari nilai total.
+          Siswa dengan pola kesulitan serupa dapat dikelompokkan lebih cepat,
+          sehingga remedial tidak lagi bergantung pada perkiraan.
         </p>
         <div className="mt-5 space-y-3">
           {[
@@ -597,20 +628,20 @@ function PilotPackage() {
       <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <p className="text-sm font-black uppercase text-[#2563eb]">Paket pilot</p>
-          <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
-            Ringkas untuk dicoba, cukup lengkap untuk dievaluasi.
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Pilot ringan untuk dicoba, cukup lengkap untuk dievaluasi.
           </h2>
           <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Pilot dirancang agar sekolah bisa melihat manfaat tanpa proses
-            implementasi yang berat.
+            Sekolah bisa melihat manfaat BaleBelajar tanpa komitmen besar di
+            awal. Mulai kecil, ukur hasilnya, lalu putuskan langkah berikutnya.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            [Clock3, "Setup cepat", "Mulai dari satu kelas dan satu asesmen diagnostik."],
-            [Target, "Prioritas belajar", "Siswa mendapat materi yang perlu dilatih lebih dulu."],
-            [UsersRound, "Kelompok remedial", "Guru melihat siswa dengan kebutuhan serupa."],
-            [TrendingUp, "Evaluasi program", "Sekolah punya data awal untuk keputusan lanjutan."],
+            [Clock3, "Setup terarah", "Mulai dari satu kelas, satu mata pelajaran, dan asesmen diagnostik yang jelas."],
+            [Target, "Prioritas belajar", "Guru melihat materi yang paling perlu dilatih lebih dulu."],
+            [UsersRound, "Kelompok tindak lanjut", "Siswa dengan kebutuhan serupa lebih mudah dikelompokkan."],
+            [TrendingUp, "Evaluasi pilot", "Sekolah punya data awal untuk menentukan kelanjutan program."],
           ].map(([Icon, title, text], index) => (
             <motion.div
               className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
@@ -632,23 +663,68 @@ function PilotPackage() {
   );
 }
 
+function FAQSection() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8" id="faq">
+      <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <p className="text-sm font-black uppercase text-[#ff8a00]">Pertanyaan umum</p>
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Hal yang biasanya ditanyakan sekolah sebelum memulai pilot.
+          </h2>
+          <p className="mt-4 font-semibold leading-8 text-slate-600">
+            Kami merancang pilot agar sekolah bisa mencoba dengan jelas,
+            terukur, dan tanpa proses implementasi yang rumit.
+          </p>
+        </div>
+        <div className="grid gap-3">
+          {faqs.map(([question, answer], index) => (
+            <motion.article
+              className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
+              initial={{ opacity: 0, y: 12 }}
+              key={question}
+              transition={{ delay: index * 0.04 }}
+              viewport={{ once: true }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <div className="flex gap-3">
+                <span className="grid size-10 shrink-0 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+                  <HelpCircle size={21} />
+                </span>
+                <div className="min-w-0">
+                  <h3 className="font-heading text-lg font-black text-[#172033]">
+                    {question}
+                  </h3>
+                  <p className="mt-2 font-semibold leading-7 text-slate-600">
+                    {answer}
+                  </p>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PilotSection() {
   return (
     <section className="px-4 pb-14 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#22c55e] text-white shadow-[0_10px_0_#129447] lg:grid-cols-[1fr_0.8fr]">
         <div className="p-7 sm:p-9">
           <h2 className="font-heading text-3xl font-black sm:text-4xl">
-            Mulai dari satu kelas dan lihat manfaatnya.
+            Siap melihat peta kemampuan siswa di kelas Anda?
           </h2>
           <p className="mt-3 max-w-2xl font-bold leading-7 text-white/88">
-            Pilot tidak harus mengganti sistem sekolah. Cukup mulai dari satu
-            kelas, satu asesmen diagnostik, dan evaluasi bersama.
+            Ajukan pilot satu kelas. Tim BaleBelajar akan membantu menyiapkan
+            alur asesmen, membaca hasil, dan menyusun evaluasi awal bersama.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-white px-5 py-4 font-heading font-black text-[#15803d] shadow-[0_6px_0_#bbf7d0]"
             href="/pilot"
           >
-            Ajukan Pilot
+            Ajukan Pilot 1 Kelas
             <ArrowRight size={19} />
           </Link>
         </div>
@@ -656,10 +732,11 @@ function PilotSection() {
           <div className="rounded-[8px] bg-white p-5 text-[#172033]">
             <MessageCircle className="text-[#22c55e]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
-              Tim BaleBelajar akan menghubungi Anda.
+              Kami bantu dari diskusi kebutuhan sampai evaluasi hasil.
             </p>
             <p className="mt-2 font-semibold leading-7 text-slate-600">
-              Diskusi kebutuhan sekolah, kelas pilot, dan asesmen pertama.
+              Mulai dari kebutuhan sekolah, kelas pilot, asesmen pertama,
+              hingga ringkasan tindak lanjut.
             </p>
           </div>
         </div>
@@ -675,7 +752,8 @@ function Footer() {
         <div>
           <p className="font-heading text-xl font-black">BaleBelajar</p>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Platform asesmen diagnostik untuk sekolah Indonesia.
+            Platform asesmen diagnostik untuk membantu sekolah memahami
+            kebutuhan belajar siswa secara lebih jelas.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm font-bold text-slate-500">
