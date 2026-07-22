@@ -55,21 +55,21 @@ export default function PilotPage() {
         <section className="grid overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[0.85fr_1.15fr]">
           <div className="bg-[#172033] p-6 text-white sm:p-8">
             <p className="text-sm font-black uppercase text-[#f9c74f]">
-              Pilot sekolah
+              Mulai pilot
             </p>
             <h1 className="font-heading mt-3 text-3xl font-black leading-tight sm:text-4xl">
-              Coba BaleBelajar di satu kelas sebelum menerapkan lebih luas.
+              Coba BaleBelajar di satu kelas. Rasakan dulu alurnya.
             </h1>
             <p className="mt-4 font-semibold leading-8 text-slate-300">
-              Ceritakan kebutuhan sekolah Anda. Tim kami akan membantu
-              menyiapkan diskusi pilot, memilih kelas awal, dan menentukan
-              asesmen diagnostik yang paling relevan.
+              Ceritakan kebutuhan sekolah Anda. Kami bantu menyiapkan diskusi
+              pilot, memilih kelas awal, dan menentukan asesmen diagnostik yang
+              paling relevan.
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {[
-                [ShieldCheck, "Terukur", "Pilot dimulai dengan tujuan dan kelas yang jelas."],
+                [ShieldCheck, "Jelas", "Pilot dimulai dengan tujuan, kelas, dan indikator yang rapi."],
                 [UsersRound, "Ringan", "Tidak perlu mengganti sistem sekolah yang sudah berjalan."],
-                [Sparkles, "Didampingi", "Tim membantu membaca hasil dan langkah tindak lanjut."],
+                [Sparkles, "Didampingi", "Tim membantu membaca hasil dan merancang tindak lanjut."],
               ].map(([Icon, title, text]) => (
                 <div className="rounded-[8px] bg-white/10 p-4" key={title as string}>
                   <Icon className="text-[#22c55e]" size={22} />
@@ -87,11 +87,11 @@ export default function PilotPage() {
               <div className="rounded-[8px] bg-[#f0fdf4] p-6 text-[#166534]">
                 <CheckCircle2 size={36} />
                 <h2 className="font-heading mt-4 text-2xl font-black">
-                  Pengajuan berhasil dikirim.
+                  Pengajuan pilot berhasil dikirim.
                 </h2>
                 <p className="mt-2 font-bold leading-7">
                   Tim BaleBelajar akan menghubungi Anda dalam 1-2 hari kerja
-                  untuk menjadwalkan diskusi pilot.
+                  untuk menjadwalkan diskusi dan menyusun langkah awal.
                 </p>
               </div>
             ) : (
@@ -142,7 +142,7 @@ export default function PilotPage() {
                   <textarea
                     className="min-h-28 w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
                     name="message"
-                    placeholder="Contoh: ingin memetakan kemampuan Matematika kelas VI sebelum remedial"
+                    placeholder="Contoh: ingin memetakan kemampuan Matematika kelas VI sebelum program remedial"
                   />
                 </label>
                 {error ? (
@@ -156,7 +156,7 @@ export default function PilotPage() {
                   type="submit"
                 >
                   {loading ? <Loader2 className="animate-spin" size={19} /> : <Send size={19} />}
-                  Kirim Pengajuan Pilot
+                  Kirim dan Jadwalkan Diskusi
                 </button>
               </form>
             )}

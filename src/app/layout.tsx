@@ -17,11 +17,11 @@ const body = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_PROFILE_URL ?? "http://localhost:3001"),
   title: {
-    default: "BaleBelajar - Platform Asesmen Diagnostik untuk Sekolah",
+    default: "BaleBelajar - Asesmen Diagnostik yang Bikin Data Belajar Lebih Jelas",
     template: "%s | BaleBelajar",
   },
   description:
-    "BaleBelajar membantu sekolah memetakan kemampuan siswa, membaca pola kesulitan kelas, dan menyusun tindak lanjut belajar berbasis data kompetensi.",
+    "BaleBelajar membantu sekolah memetakan kemampuan siswa, membaca pola kesulitan kelas, dan menyusun remedial berbasis data kompetensi tanpa rekap manual.",
   keywords: [
     "asesmen diagnostik siswa",
     "platform pendidikan Lombok",
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
     "teknologi pendidikan Indonesia",
   ],
   openGraph: {
-    title: "BaleBelajar - Platform Asesmen Diagnostik untuk Sekolah",
+    title: "BaleBelajar - Data Belajar Jadi Langkah Kelas yang Jelas",
     description:
-      "Pemetaan kemampuan siswa, dashboard guru, dan rekomendasi tindak lanjut belajar yang mudah dipahami.",
+      "Asesmen diagnostik, dashboard guru, dan rekomendasi tindak lanjut belajar yang ramah untuk sekolah.",
     type: "website",
     url: "/",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BaleBelajar - Platform Asesmen Diagnostik untuk Sekolah",
+    title: "BaleBelajar - Asesmen Diagnostik yang Siap Dipakai Guru",
     description:
       "Pemetaan kemampuan siswa dan rekomendasi tindak lanjut belajar berbasis data kompetensi.",
   },
