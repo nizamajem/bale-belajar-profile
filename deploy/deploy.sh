@@ -15,8 +15,15 @@ else
 POSTGRES_PASSWORD=$(openssl rand -hex 24)
 JWT_ACCESS_SECRET=$(openssl rand -hex 32)
 JWT_REFRESH_SECRET=$(openssl rand -hex 32)
+# Isi manual dari Firebase Console -> Project Settings -> Service Accounts ->
+# Generate new private key. FIREBASE_PRIVATE_KEY harus satu baris dengan \n
+# literal (bukan newline sungguhan), diapit tanda kutip dua.
+FIREBASE_PROJECT_ID=
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=
 EOF
   chmod 600 "$ENV_FILE"
+  echo "!! PENTING: isi FIREBASE_PROJECT_ID/FIREBASE_CLIENT_EMAIL/FIREBASE_PRIVATE_KEY di $ENV_FILE sebelum login Google bisa berfungsi." >&2
 fi
 
 echo "-> Menulis docker-compose.yml..."
@@ -61,6 +68,9 @@ services:
       PROFILE_URL: https://balebelajar.com
       UPLOAD_DIR: uploads
       MAX_FILE_SIZE_MB: 5
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID}
+      FIREBASE_CLIENT_EMAIL: ${FIREBASE_CLIENT_EMAIL}
+      FIREBASE_PRIVATE_KEY: ${FIREBASE_PRIVATE_KEY}
     ports:
       - "127.0.0.1:4000:4000"
     networks:
@@ -73,6 +83,12 @@ services:
         NEXT_PUBLIC_API_URL: https://api.balebelajar.com/api/v1
         NEXT_PUBLIC_PROFILE_URL: https://balebelajar.com
         NEXT_PUBLIC_APP_NAME: BaleBelajar
+        NEXT_PUBLIC_FIREBASE_API_KEY: AIzaSyCmr6f6mAiR7hnQrO8Wh5buXRDefUyEjxw
+        NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: balebelajar-87d3d.firebaseapp.com
+        NEXT_PUBLIC_FIREBASE_PROJECT_ID: balebelajar-87d3d
+        NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: balebelajar-87d3d.firebasestorage.app
+        NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: "710455423596"
+        NEXT_PUBLIC_FIREBASE_APP_ID: "1:710455423596:web:f87ec939cc290fbc0ede49"
     container_name: bale-belajar-fe
     restart: unless-stopped
     depends_on:
