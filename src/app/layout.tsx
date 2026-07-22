@@ -17,32 +17,33 @@ const body = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_PROFILE_URL ?? "http://localhost:3001"),
   title: {
-    default: "BaleBelajar - Asesmen Diagnostik yang Bikin Data Belajar Lebih Jelas",
+    default: "BaleBelajar - Blueprint Belajar Personal dari Cita-Cita ke Kurikulum",
     template: "%s | BaleBelajar",
   },
   description:
-    "BaleBelajar membantu sekolah memetakan kemampuan siswa, membaca pola kesulitan kelas, dan menyusun remedial berbasis data kompetensi tanpa rekap manual.",
+    "BaleBelajar membantu sekolah memetakan minat, fondasi lintas pelajaran, dan cita-cita siswa untuk menyusun kurikulum belajar personal dari dasar.",
   keywords: [
-    "asesmen diagnostik siswa",
+    "blueprint belajar siswa",
+    "kurikulum personal siswa",
     "platform pendidikan Lombok",
-    "dashboard guru",
-    "remedial berbasis data",
-    "pemetaan kemampuan siswa",
+    "peta cita-cita siswa",
+    "asesmen diagnostik siswa",
+    "semua pelajaran",
     "teknologi pendidikan Indonesia",
   ],
   openGraph: {
-    title: "BaleBelajar - Data Belajar Jadi Langkah Kelas yang Jelas",
+    title: "BaleBelajar - Dari Cita-Cita Jadi Kurikulum Belajar",
     description:
-      "Asesmen diagnostik, dashboard guru, dan rekomendasi tindak lanjut belajar yang ramah untuk sekolah.",
+      "Platform blueprint belajar untuk memetakan minat, fondasi pelajaran, dan jalur profesi siswa dari dasar.",
     type: "website",
     url: "/",
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BaleBelajar - Asesmen Diagnostik yang Siap Dipakai Guru",
+    title: "BaleBelajar - Blueprint Belajar Personal untuk Siswa",
     description:
-      "Pemetaan kemampuan siswa dan rekomendasi tindak lanjut belajar berbasis data kompetensi.",
+      "Pemetaan minat, fondasi lintas pelajaran, dan jalur cita-cita siswa menjadi kurikulum personal.",
   },
 };
 

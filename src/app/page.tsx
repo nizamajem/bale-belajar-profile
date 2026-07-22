@@ -9,14 +9,18 @@ import {
   Check,
   ClipboardCheck,
   Clock3,
+  Code2,
+  Compass,
   GraduationCap,
   HeartHandshake,
   HelpCircle,
   LineChart,
   MessageCircle,
+  Search,
   School,
   ShieldCheck,
   Sparkles,
+  Stethoscope,
   Target,
   TrendingUp,
   UsersRound,
@@ -25,64 +29,87 @@ import {
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 const workflow = [
-  ["Cek ringan", "Siswa mengerjakan asesmen singkat yang nyaman di HP dan mudah dipahami."],
-  ["Baca pola", "BaleBelajar mengubah jawaban menjadi peta kompetensi yang rapi."],
-  ["Pilih fokus", "Guru langsung tahu materi, siswa, dan kelas mana yang perlu dibantu dulu."],
-  ["Aksi kelas", "Kelompok remedial dan pengayaan tersusun berdasarkan kebutuhan nyata."],
-  ["Ukur dampak", "Sekolah punya bahan evaluasi yang jelas untuk keputusan berikutnya."],
+  ["Pilih impian", "Siswa memilih arah cita-cita: dokter, detektif, ICT, guru, kreator, dan jalur lain."],
+  ["Cek fondasi", "BaleBelajar memetakan kemampuan dasar lintas pelajaran yang dibutuhkan untuk jalur itu."],
+  ["Susun kurikulum", "Sistem menyusun urutan belajar dari dasar sampai target kompetensi berikutnya."],
+  ["Latihan bertahap", "Guru dan siswa melihat misi belajar harian, remedial, dan pengayaan yang relevan."],
+  ["Pantau progres", "Sekolah dapat membaca perkembangan siswa berdasarkan tujuan, bukan hanya nilai akhir."],
 ];
 
 const trustItems = [
-  "Pilot mulai dari 1 kelas",
-  "Dashboard guru yang siap dipakai",
-  "Data kompetensi, bukan cuma nilai",
-  "Laporan ramah guru dan orang tua",
+  "Semua pelajaran bisa dipetakan",
+  "Kurikulum mengikuti cita-cita siswa",
+  "Mulai dari fondasi paling dasar",
+  "Dashboard untuk siswa, guru, dan sekolah",
 ];
 
 const problemCards = [
-  "Nilai akhir sering datang tanpa petunjuk jelas tentang materi yang harus dibantu.",
-  "Guru perlu membaca pola satu kelas tanpa tenggelam di spreadsheet dan rekap manual.",
-  "Siswa butuh arahan yang terasa personal, bukan cuma angka yang membuat bingung.",
-  "Program remedial lebih kuat ketika dimulai dari data kebutuhan yang nyata.",
+  "Siswa sering belajar tanpa tahu hubungan pelajaran hari ini dengan cita-citanya.",
+  "Sekolah butuh cara membaca kemampuan dasar siswa lintas pelajaran, bukan per mapel saja.",
+  "Guru perlu jalur belajar yang bisa dipersonalisasi tanpa membuat kurikulum manual dari nol.",
+  "Orang tua ingin melihat arah perkembangan anak dengan bahasa yang jelas dan masuk akal.",
 ];
 
 const benefitCards = [
   {
     icon: GraduationCap,
     title: "Untuk Siswa",
-    text: "Hasil belajar terasa lebih positif: siswa tahu yang sudah dikuasai dan langkah latihan berikutnya.",
+    text: "Belajar terasa punya arah: siswa tahu kenapa matematika, bahasa, sains, dan logika penting untuk impiannya.",
     tone: "bg-[#eff6ff] text-[#2563eb]",
   },
   {
     icon: UsersRound,
     title: "Untuk Guru",
-    text: "Heatmap, siswa prioritas, dan kelompok tindak lanjut muncul dalam satu tampilan yang mudah dieksekusi.",
+    text: "Guru melihat fondasi yang perlu diperkuat, kelompok belajar, dan misi latihan yang relevan dengan target siswa.",
     tone: "bg-[#f0fdf4] text-[#16a34a]",
   },
   {
     icon: School,
     title: "Untuk Sekolah",
-    text: "Punya data awal yang lebih kredibel untuk evaluasi program, diskusi guru, dan komunikasi orang tua.",
+    text: "Sekolah punya peta talenta dan kebutuhan belajar yang lebih kaya untuk program akademik, karier, dan orang tua.",
     tone: "bg-[#fff7ed] text-[#c2410c]",
+  },
+];
+
+const careerTracks = [
+  {
+    icon: Search,
+    title: "Ingin jadi Detektif",
+    text: "Mulai dari membaca petunjuk, logika dasar, observasi, bahasa, data, sampai sains forensik ringan.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Ingin jadi Dokter",
+    text: "Dibangun dari biologi dasar, numerasi, kebiasaan riset, komunikasi empatik, dan latihan studi kasus.",
+  },
+  {
+    icon: Code2,
+    title: "Ingin masuk ICT",
+    text: "Berangkat dari logika, matematika dasar, literasi digital, problem solving, sampai proyek teknologi kecil.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Ingin jadi Guru",
+    text: "Dilatih lewat penguasaan konsep, cara menjelaskan, empati kelas, komunikasi, dan refleksi belajar.",
   },
 ];
 
 const faqs = [
   [
-    "Apakah sekolah harus mengganti sistem yang sudah berjalan?",
-    "Tidak. BaleBelajar bisa dicoba dari satu kelas dan satu asesmen diagnostik tanpa mengganggu sistem akademik sekolah.",
+    "Apakah BaleBelajar hanya untuk Matematika?",
+    "Tidak. Matematika bisa menjadi pilot awal, tetapi blueprint BaleBelajar dirancang untuk semua pelajaran dan jalur cita-cita siswa.",
   ],
   [
-    "Berapa lama pilot bisa dijalankan?",
-    "Pilot awal dibuat ringkas: tentukan kelas, jalankan asesmen, baca dashboard, lalu evaluasi hasilnya bersama tim sekolah.",
+    "Kalau siswa ingin jadi detektif, dokter, atau ahli ICT, apa yang terjadi?",
+    "BaleBelajar memetakan fondasi yang dibutuhkan untuk jalur tersebut, lalu menyusun urutan belajar dari dasar: literasi, numerasi, logika, sains, komunikasi, dan proyek kecil.",
   ],
   [
-    "Apa yang diterima guru setelah asesmen?",
-    "Guru mendapat ringkasan skor, peta kompetensi, siswa prioritas, dan rekomendasi tindak lanjut untuk remedial atau pengayaan.",
+    "Apakah sekolah harus mengganti kurikulum?",
+    "Tidak. BaleBelajar membantu memperjelas jalur belajar dan tindak lanjut, sehingga bisa menjadi lapisan pendamping di atas kurikulum sekolah yang sudah berjalan.",
   ],
   [
-    "Apakah hasilnya mudah dipahami orang tua?",
-    "Ya. Bahasa laporan dibuat positif dan praktis agar orang tua memahami posisi belajar anak tanpa istilah teknis yang berlebihan.",
+    "Apa yang diterima guru dan orang tua?",
+    "Guru mendapat peta fondasi, rekomendasi misi belajar, dan kelompok tindak lanjut. Orang tua mendapat bahasa progres yang lebih mudah dipahami.",
   ],
 ];
 
@@ -93,6 +120,7 @@ export default function HomePage() {
       <Hero />
       <MetricsBand />
       <TrustStrip />
+      <CareerBlueprint />
       <Problems />
       <Workflow />
       <Benefits />
@@ -120,7 +148,7 @@ function Hero() {
             initial={{ opacity: 0, y: 14 }}
           >
             <Sparkles className="shrink-0" size={17} />
-            <span className="min-w-0">Asesmen diagnostik yang ringan untuk siswa, tajam untuk keputusan sekolah.</span>
+            <span className="min-w-0">Blueprint belajar personal untuk semua pelajaran dan semua cita-cita siswa.</span>
           </motion.div>
 
           <motion.h1
@@ -129,7 +157,7 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.06 }}
           >
-            Bikin data belajar jadi langkah kelas yang jelas.
+            Dari cita-cita jadi kurikulum belajar yang jelas.
           </motion.h1>
 
           <motion.p
@@ -138,9 +166,9 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.12 }}
           >
-            BaleBelajar membantu guru menemukan kemampuan siswa, membaca pola
-            kesulitan kelas, dan menyusun remedial yang lebih tepat tanpa rekap
-            manual yang melelahkan.
+            BaleBelajar memetakan minat, kemampuan dasar, dan target masa depan
+            siswa, lalu menyusun jalur belajar bertahap dari fondasi sampai
+            profesi impian.
           </motion.p>
 
           <motion.div
@@ -153,14 +181,14 @@ function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-6 py-4 font-heading font-black text-white shadow-[0_8px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
-              Coba Pilot Gratis
+              Coba Blueprint Pilot
               <ArrowRight size={19} />
             </Link>
             <a
               className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-6 py-4 font-heading font-black text-slate-700 shadow-[0_8px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="#dashboard"
             >
-              Intip Dashboard Guru
+              Lihat Contoh Jalur
             </a>
           </motion.div>
 
@@ -171,9 +199,9 @@ function Hero() {
             transition={{ delay: 0.24 }}
           >
             {[
-              ["1", "kelas untuk mulai"],
-              ["3", "prioritas belajar"],
-              ["7", "hari evaluasi awal"],
+              ["Semua", "pelajaran dipetakan"],
+              ["1", "cita-cita jadi jalur"],
+              ["Dasar", "sampai siap bertumbuh"],
             ].map(([value, label]) => (
               <div className="rounded-[8px] border border-white bg-white/82 p-3 shadow-sm backdrop-blur" key={label}>
                 <p className="font-heading text-xl font-black text-[#172033] sm:text-2xl">{value}</p>
@@ -188,7 +216,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             transition={{ delay: 0.26 }}
           >
-            {["Tanpa ganti sistem sekolah", "Bahasa laporan ramah", "Cocok untuk pilot cepat"].map(
+            {["Mulai dari fondasi", "Jalur bisa berbeda tiap siswa", "Tetap terhubung ke sekolah"].map(
               (item) => (
                 <span
                   className="inline-flex items-center gap-2 rounded-full bg-white/88 px-4 py-2 text-sm font-black text-slate-600 shadow-sm"
@@ -324,15 +352,15 @@ function HeroMockup() {
       <div className="rounded-[8px] bg-[#f8fafc] p-3 sm:p-5">
         <div className="mb-5 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
           <div>
-            <p className="text-sm font-black uppercase text-[#2563eb]">BaleBelajar Pilot Center</p>
-            <h2 className="font-heading text-xl font-black sm:text-2xl">Kelas VI A Matematika</h2>
+            <p className="text-sm font-black uppercase text-[#2563eb]">BaleBelajar Career Blueprint</p>
+            <h2 className="font-heading text-xl font-black sm:text-2xl">Jalur Detektif Junior</h2>
           </div>
           <div className="flex flex-wrap gap-2">
             <span className="w-fit rounded-full bg-[#dcfce7] px-3 py-1 text-sm font-black text-[#166534]">
-              82% selesai
+              Fondasi 82%
             </span>
             <span className="w-fit rounded-full bg-[#fff7ed] px-3 py-1 text-sm font-black text-[#c2410c]">
-              18 butuh latihan
+              3 misi baru
             </span>
           </div>
         </div>
@@ -343,10 +371,10 @@ function HeroMockup() {
               <div className="w-full">
                 <div className="mb-3 grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 text-[10px] font-black text-slate-400 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2 min-[390px]:text-xs">
                   <span>Siswa</span>
-                  <span>Pecahan</span>
-                  <span>Perband.</span>
+                  <span>Logika</span>
+                  <span>Bahasa</span>
+                  <span>Sains</span>
                   <span>Data</span>
-                  <span>Bangun</span>
                 </div>
                 <div className="grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2">
                   {["Aulia", "Bima", "Citra"].map((name, row) => (
@@ -379,9 +407,9 @@ function HeroMockup() {
 
           <div className="grid gap-3">
             {[
-              ["Prioritas minggu ini", "Pecahan dan soal cerita", "#2563eb"],
-              ["Kelompok remedial", "3 kelompok belajar", "#22c55e"],
-              ["Pesan untuk orang tua", "Bahasa positif siap dibagikan", "#ff8a00"],
+              ["Cita-cita siswa", "Detektif investigasi", "#2563eb"],
+              ["Fondasi awal", "Logika, bahasa, observasi", "#22c55e"],
+              ["Misi minggu ini", "Baca petunjuk dan susun bukti", "#ff8a00"],
             ].map(([label, value, color]) => (
               <div className="rounded-[8px] bg-white p-3 shadow-sm" key={label}>
                 <span className="mb-2 block size-3 rounded-full" style={{ backgroundColor: color }} />
@@ -394,11 +422,11 @@ function HeroMockup() {
 
         <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white">
           <div className="mb-3 flex items-center justify-between gap-3">
-            <p className="font-heading font-black">Rencana 7 hari</p>
-            <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-[#f9c74f]">Siap dieksekusi</span>
+            <p className="font-heading font-black">Kurikulum dari dasar</p>
+            <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-[#f9c74f]">Personal</span>
           </div>
           <div className="grid gap-2 sm:grid-cols-3">
-            {["Latihan fokus", "Remedial kecil", "Ukur ulang"].map((item, index) => (
+            {["Fondasi", "Misi profesi", "Portofolio"].map((item, index) => (
               <div className="rounded-[8px] bg-white/10 p-3" key={item}>
                 <span className="grid size-8 place-items-center rounded-[8px] bg-[#22c55e] font-heading font-black shadow-[0_4px_0_#129447]">
                   {index + 1}
@@ -433,9 +461,9 @@ function MetricsBand() {
     <section className="border-y border-slate-200 bg-white/80 py-5 backdrop-blur">
       <div className="mx-auto grid max-w-7xl gap-3 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
         {[
-          ["1 kelas", "mulai pilot kecil", ShieldCheck],
-          ["3 fokus", "rekomendasi belajar", Target],
-          ["7 hari", "evaluasi awal", LineChart],
+          ["Semua mapel", "fondasi lintas pelajaran", ShieldCheck],
+          ["Banyak jalur", "cita-cita jadi kurikulum", Target],
+          ["Bertahap", "dari dasar sampai proyek", LineChart],
         ].map(([value, label, Icon]) => (
           <motion.div
             className="rounded-[8px] bg-white p-5 shadow-sm"
@@ -456,6 +484,58 @@ function MetricsBand() {
   );
 }
 
+function CareerBlueprint() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div>
+          <p className="text-sm font-black uppercase text-[#2563eb]">
+            Product blueprint
+          </p>
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Setiap cita-cita punya jalur belajar dari dasar.
+          </h2>
+          <p className="mt-4 font-semibold leading-8 text-slate-600">
+            BaleBelajar tidak berhenti di nilai. Platform ini membantu sekolah
+            menghubungkan pelajaran dengan tujuan siswa, lalu membangun
+            kurikulum personal yang bisa dipantau guru dan orang tua.
+          </p>
+          <div className="mt-6 rounded-[8px] bg-[#172033] p-5 text-white">
+            <Compass className="text-[#f9c74f]" size={28} />
+            <p className="font-heading mt-4 text-2xl font-black">
+              Formula inti: minat + fondasi + misi + progres.
+            </p>
+            <p className="mt-2 font-semibold leading-7 text-slate-300">
+              Dari “aku mau jadi detektif” menjadi latihan membaca petunjuk,
+              logika, bahasa, data, sains, sampai proyek investigasi kecil.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {careerTracks.map((item, index) => (
+            <motion.article
+              className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
+              initial={{ opacity: 0, y: 12 }}
+              key={item.title}
+              transition={{ delay: index * 0.05 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <span className="grid size-12 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+                <item.icon size={25} />
+              </span>
+              <h3 className="font-heading mt-4 text-xl font-black">{item.title}</h3>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{item.text}</p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Problems() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
@@ -465,12 +545,12 @@ function Problems() {
             Kenapa ini penting
           </p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Nilai saja belum cukup untuk menentukan bantuan belajar.
+            Anak tidak butuh nilai saja. Mereka butuh arah.
           </h2>
           <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Sekolah butuh peta yang lebih detail: kompetensi apa yang sudah
-            kuat, bagian mana yang tertinggal, dan intervensi apa yang paling
-            masuk akal untuk dimulai.
+            Sekolah butuh peta yang menjawab tiga hal: siswa tertarik ke mana,
+            fondasi apa yang sudah kuat, dan pelajaran apa yang perlu dibangun
+            untuk menuju cita-cita itu.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -504,7 +584,7 @@ function Workflow() {
       <div className="mx-auto max-w-7xl">
         <p className="text-sm font-black uppercase text-[#f9c74f]">Cara kerja</p>
         <h2 className="section-title text-balance-soft font-heading mt-2 max-w-3xl font-black">
-          Dari cek kemampuan sampai aksi kelas, alurnya dibuat ringan.
+          Dari impian siswa sampai kurikulum personal, alurnya tetap ringan.
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {workflow.map(([title, text], index) => (
@@ -538,7 +618,7 @@ function Benefits() {
       <div className="mb-7 max-w-3xl">
         <p className="text-sm font-black uppercase text-[#2563eb]">Manfaat</p>
         <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-          Lebih cepat untuk guru, lebih ramah untuk siswa, lebih jelas untuk sekolah.
+          Belajar jadi lebih relevan, guru lebih terarah, sekolah punya peta talenta.
         </h2>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -575,11 +655,12 @@ function DashboardSection() {
           Intip dashboard
         </p>
         <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-          Guru tidak perlu menebak harus mulai dari mana.
+          Guru melihat pelajaran sebagai fondasi menuju masa depan siswa.
         </h2>
         <p className="mt-4 font-semibold leading-8 text-slate-600">
-          Dashboard menampilkan prioritas belajar, siswa yang perlu dukungan,
-          dan kelompok tindak lanjut dalam bahasa yang praktis untuk dipakai di kelas.
+          Dashboard menampilkan tujuan siswa, fondasi lintas pelajaran, prioritas
+          belajar, dan misi berikutnya dalam bahasa yang praktis untuk dipakai
+          di kelas.
         </p>
       </div>
       <DashboardPreview />
@@ -593,8 +674,8 @@ function DashboardPreview() {
       <div className="grid gap-4 sm:grid-cols-3">
         {[
           [Target, "3", "prioritas belajar", "#2563eb"],
-          [BarChart3, "76", "rata-rata kelas", "#22c55e"],
-          [ClipboardCheck, "18", "perlu latihan", "#ff6b6b"],
+          [BarChart3, "5", "fondasi dipetakan", "#22c55e"],
+          [ClipboardCheck, "12", "misi personal", "#ff6b6b"],
         ].map(([Icon, value, label, color], index) => (
           <motion.div
             className="rounded-[8px] bg-[#f8fafc] p-4"
@@ -615,17 +696,17 @@ function DashboardPreview() {
       <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white sm:p-5">
         <HeartHandshake className="text-[#f9c74f]" size={28} />
         <h3 className="font-heading mt-4 text-2xl font-black">
-          Kelompok belajar berbasis kebutuhan
+          Jalur belajar berbasis tujuan siswa
         </h3>
         <p className="mt-2 font-semibold leading-7 text-slate-300">
-          Siswa dengan pola kesulitan serupa dapat dikelompokkan lebih cepat,
-          sehingga tindak lanjut kelas tidak lagi bergantung pada perkiraan.
+          Siswa tetap bisa belajar sesuai standar sekolah, tetapi misi dan
+          contoh latihannya dibuat lebih dekat dengan minat dan cita-citanya.
         </p>
         <div className="mt-5 space-y-3">
           {[
             ["Perbandingan", "8 siswa", "72%"],
-            ["Soal cerita", "6 siswa", "58%"],
-            ["Pengayaan", "12 siswa", "91%"],
+            ["Logika", "6 misi", "58%"],
+            ["Proyek mini", "12 siswa", "91%"],
           ].map(([label, value, width]) => (
             <div key={label}>
               <div className="mb-2 flex justify-between gap-3 text-sm font-black">
@@ -653,20 +734,20 @@ function PilotPackage() {
         <div>
           <p className="text-sm font-black uppercase text-[#2563eb]">Paket pilot</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Coba kecil dulu, lihat dampaknya dengan jelas.
+            Coba dari satu kelas, satu tema cita-cita, lalu ukur progresnya.
           </h2>
           <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Pilot dibuat supaya sekolah bisa merasakan alurnya tanpa komitmen
-            besar di awal. Mulai dari satu kelas, baca hasilnya, lalu putuskan
-            langkah berikutnya dengan data.
+            Pilot bisa dimulai dari kelas kecil. Pilih beberapa cita-cita
+            populer siswa, petakan fondasinya, lalu lihat apakah jalur belajar
+            terasa lebih relevan dan mudah dijalankan.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            [Clock3, "Setup cepat", "Mulai dari satu kelas, satu mapel, dan asesmen diagnostik yang relevan."],
-            [Target, "Fokus yang jelas", "Guru melihat materi yang paling perlu dilatih lebih dulu."],
-            [UsersRound, "Kelompok belajar", "Siswa dengan kebutuhan serupa lebih mudah ditangani bersama."],
-            [TrendingUp, "Evaluasi rapi", "Sekolah punya data awal untuk menentukan kelanjutan program."],
+            [Clock3, "Setup cepat", "Mulai dari satu kelas dan beberapa jalur cita-cita siswa."],
+            [Target, "Fondasi jelas", "Guru melihat pelajaran dasar yang perlu dibangun lebih dulu."],
+            [UsersRound, "Misi personal", "Siswa mendapat latihan yang terasa nyambung dengan impiannya."],
+            [TrendingUp, "Evaluasi rapi", "Sekolah punya data awal untuk membaca minat, fondasi, dan progres."],
           ].map(([Icon, title, text], index) => (
             <motion.div
               className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
@@ -739,17 +820,17 @@ function PilotSection() {
       <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#22c55e] text-white shadow-[0_10px_0_#129447] lg:grid-cols-[1fr_0.8fr]">
         <div className="p-7 sm:p-9">
           <h2 className="font-heading text-3xl font-black sm:text-4xl">
-            Siap melihat kelas Anda dari sudut pandang yang lebih jelas?
+            Siap mengubah cita-cita siswa menjadi jalur belajar yang nyata?
           </h2>
           <p className="mt-3 max-w-2xl font-bold leading-7 text-white/88">
-            Ajukan pilot satu kelas. Kami bantu siapkan asesmen, baca hasil,
-            dan ubah datanya menjadi langkah belajar yang bisa langsung dicoba.
+            Ajukan pilot satu kelas. Kami bantu petakan minat siswa, membaca
+            fondasi belajarnya, dan menyusun contoh kurikulum personal dari dasar.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-white px-5 py-4 font-heading font-black text-[#15803d] shadow-[0_6px_0_#bbf7d0]"
             href="/pilot"
           >
-            Mulai Pilot Gratis
+            Mulai Blueprint Pilot
             <ArrowRight size={19} />
           </Link>
         </div>
@@ -757,11 +838,11 @@ function PilotSection() {
           <div className="rounded-[8px] bg-white p-5 text-[#172033]">
             <MessageCircle className="text-[#22c55e]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
-              Dari diskusi kebutuhan sampai evaluasi hasil, kami dampingi.
+              Dari cita-cita sampai misi belajar, kami dampingi.
             </p>
             <p className="mt-2 font-semibold leading-7 text-slate-600">
-              Mulai dari kebutuhan sekolah, kelas pilot, asesmen pertama,
-              sampai ringkasan tindak lanjut yang siap dibahas.
+              Mulai dari kebutuhan sekolah, cita-cita siswa, asesmen fondasi,
+              sampai contoh jalur belajar yang siap dibahas.
             </p>
           </div>
         </div>
@@ -777,8 +858,8 @@ function Footer() {
         <div>
           <p className="font-heading text-xl font-black">BaleBelajar</p>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Platform asesmen diagnostik yang membantu sekolah memahami siswa
-            lebih cepat, lebih ramah, dan lebih berbasis data.
+            Platform blueprint belajar yang menghubungkan minat, semua pelajaran,
+            dan cita-cita siswa ke kurikulum personal dari dasar.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm font-bold text-slate-500">
