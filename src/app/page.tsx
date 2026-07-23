@@ -94,6 +94,12 @@ const careerTracks = [
   },
 ];
 
+const curiosityCards = [
+  ["Pilih Impian", "Siswa memilih jalur yang terasa dekat: detektif, dokter, ICT, guru, atau lainnya."],
+  ["Buka Misi", "Pelajaran berubah menjadi tantangan kecil yang punya alasan dan tujuan."],
+  ["Lihat Progres", "Guru dan orang tua melihat fondasi yang tumbuh, bukan cuma angka akhir."],
+];
+
 const faqs = [
   [
     "Apakah BaleBelajar hanya untuk Matematika?",
@@ -120,6 +126,7 @@ export default function HomePage() {
       <Hero />
       <MetricsBand />
       <TrustStrip />
+      <CuriosityLoop />
       <CareerBlueprint />
       <Problems />
       <Workflow />
@@ -498,6 +505,63 @@ function MetricsBand() {
             <p className="mt-1 font-bold text-slate-500">{label as string}</p>
           </motion.div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function CuriosityLoop() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="overflow-hidden rounded-[8px] bg-[#172033] p-5 text-white shadow-[0_10px_0_#0f172a] sm:p-7">
+        <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-sm font-black uppercase text-[#f9c74f]">
+              Yang bikin penasaran
+            </p>
+            <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+              Dalam beberapa klik, anak bisa melihat belajar itu menuju ke mana.
+            </h2>
+            <p className="mt-4 font-semibold leading-8 text-slate-300">
+              Pengalaman pertama harus terasa ringan: pilih impian, lihat misi,
+              lalu paham kenapa pelajaran hari ini penting untuk masa depan.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+                href="/pilot"
+              >
+                Coba Alur Pilot
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-white/14 bg-white/8 px-5 py-4 font-heading font-black text-white transition hover:bg-white/12"
+                href={`${appUrl}/login`}
+              >
+                Masuk Platform
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            {curiosityCards.map(([title, text], index) => (
+              <motion.article
+                className="interactive-card rounded-[8px] border border-white/12 bg-white/10 p-5"
+                initial={{ opacity: 0, y: 16 }}
+                key={title}
+                transition={{ delay: index * 0.08 }}
+                viewport={{ once: true }}
+                whileInView={{ opacity: 1, y: 0 }}
+              >
+                <span className="mission-node-active grid size-10 place-items-center rounded-[8px] bg-[#f9c74f] font-heading font-black text-[#172033]">
+                  {index + 1}
+                </span>
+                <h3 className="font-heading mt-4 text-xl font-black">{title}</h3>
+                <p className="mt-2 text-sm font-semibold leading-6 text-slate-300">{text}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
