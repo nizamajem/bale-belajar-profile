@@ -29,44 +29,44 @@ import {
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 const workflow = [
-  ["Tanya impian", "Siswa memilih mau jadi apa: detektif, dokter, ahli ICT, guru, kreator, atau jalur lain."],
-  ["Buka peta", "BaleBelajar membaca fondasi lintas pelajaran yang sudah kuat dan yang perlu dibangun."],
-  ["Racik jalur", "Sistem menyusun kurikulum kecil dari dasar, bukan daftar materi yang terasa acak."],
-  ["Jalankan misi", "Siswa belajar lewat misi harian yang terasa nyambung dengan cita-citanya."],
-  ["Lihat tumbuh", "Guru, sekolah, dan orang tua melihat progres yang lebih hidup dari sekadar nilai akhir."],
+  ["Tanya impian", "Detektif, dokter, ahli ICT, guru, atau jalur lain — siswa pilih sendiri."],
+  ["Buka peta", "BaleBelajar baca fondasi yang sudah kuat dan yang masih bolong."],
+  ["Racik jalur", "Kurikulum kecil tersusun dari dasar, bukan daftar acak."],
+  ["Jalankan misi", "Misi harian yang nyambung sama cita-citanya."],
+  ["Lihat tumbuh", "Progresnya lebih hidup dari sekadar nilai akhir."],
 ];
 
 const trustItems = [
-  "Semua pelajaran terasa punya alasan",
-  "Cita-cita jadi peta belajar",
-  "Mulai dari fondasi paling dasar",
-  "Progres bisa dilihat guru dan orang tua",
+  "Kami janji: tiap pelajaran ada alasannya",
+  "Cita-cita diubah jadi peta belajar, bukan slogan",
+  "Selalu mulai dari fondasi paling dasar, bukan loncat",
+  "Progres bisa diceritakan ke guru dan orang tua, bukan cuma angka",
 ];
 
 const problemCards = [
-  "Banyak siswa bertanya, 'Ini belajar buat apa?' lalu kehilangan rasa penasaran.",
-  "Pelajaran sering berdiri sendiri, padahal cita-cita butuh gabungan logika, bahasa, sains, data, dan karakter.",
-  "Guru ingin personalisasi, tapi membuat jalur belajar satu per satu dari nol terlalu berat.",
-  "Orang tua butuh cerita progres yang jelas: anak sedang bertumbuh ke arah apa, bukan cuma nilainya berapa.",
+  "“Ini belajar buat apa?” — lalu penasaran itu hilang.",
+  "Pelajaran berdiri sendiri, padahal cita-cita butuh semuanya sekaligus.",
+  "Personalisasi itu berat kalau dibuat manual dari nol.",
+  "Orang tua cuma dapat angka, bukan cerita progres.",
 ];
 
 const benefitCards = [
   {
     icon: GraduationCap,
     title: "Untuk Siswa",
-    text: "Belajar terasa seperti membuka level baru: siswa tahu kenapa logika, bahasa, sains, dan data penting untuk impiannya.",
+    text: "Belajar terasa seperti buka level baru menuju impiannya.",
     tone: "bg-[#eff6ff] text-[#2563eb]",
   },
   {
     icon: UsersRound,
     title: "Untuk Guru",
-    text: "Guru melihat fondasi yang perlu diperkuat, kelompok belajar, dan misi latihan yang siap dipakai di kelas.",
+    text: "Fondasi yang perlu diperkuat dan misi siap pakai — langsung kelihatan.",
     tone: "bg-[#f0fdf4] text-[#16a34a]",
   },
   {
     icon: School,
     title: "Untuk Sekolah",
-    text: "Sekolah punya peta talenta yang lebih hidup untuk program akademik, karier, dan komunikasi orang tua.",
+    text: "Peta talenta yang lebih hidup buat program akademik dan orang tua.",
     tone: "bg-[#fff7ed] text-[#c2410c]",
   },
 ];
@@ -75,65 +75,65 @@ const careerTracks = [
   {
     icon: Search,
     title: "Detektif Junior",
-    text: "Anak belajar membaca petunjuk, menyusun bukti, memakai logika, bahasa, data, dan sains sederhana.",
+    text: "Baca petunjuk, susun bukti, pakai logika dan sains sederhana.",
   },
   {
     icon: Stethoscope,
     title: "Dokter Masa Depan",
-    text: "Jalur dimulai dari biologi dasar, numerasi, kebiasaan riset, komunikasi empatik, dan studi kasus ringan.",
+    text: "Biologi dasar, numerasi, riset, sampai studi kasus ringan.",
   },
   {
     icon: Code2,
     title: "Anak ICT",
-    text: "Mulai dari logika, matematika dasar, literasi digital, problem solving, sampai proyek teknologi kecil.",
+    text: "Logika, matematika dasar, literasi digital, sampai proyek kecil.",
   },
   {
     icon: GraduationCap,
     title: "Guru Inspiratif",
-    text: "Dilatih lewat penguasaan konsep, cara menjelaskan, empati kelas, komunikasi, dan refleksi belajar.",
+    text: "Kuasai konsep, cara menjelaskan, dan empati di kelas.",
   },
 ];
 
 const curiosityCards = [
-  ["Pilih Impian", "Siswa memilih jalur yang terasa dekat: detektif, dokter, ICT, guru, atau lainnya."],
-  ["Buka Misi", "Pelajaran berubah menjadi tantangan kecil yang punya alasan dan tujuan."],
-  ["Lihat Progres", "Guru dan orang tua melihat fondasi yang tumbuh, bukan cuma angka akhir."],
+  ["Pilih Impian", "Detektif, dokter, ICT, guru, atau lainnya."],
+  ["Buka Misi", "Pelajaran jadi tantangan kecil yang punya tujuan."],
+  ["Lihat Progres", "Fondasi yang tumbuh, bukan cuma angka akhir."],
 ];
 
 const faqs = [
   [
     "Apakah BaleBelajar hanya untuk Matematika?",
-    "Tidak. Matematika bisa menjadi pilot awal, tetapi blueprint BaleBelajar dirancang untuk semua pelajaran dan jalur cita-cita siswa.",
+    "Tidak. Matematika cuma pilot awal — blueprint-nya untuk semua pelajaran.",
   ],
   [
     "Kalau siswa ingin jadi detektif, dokter, atau ahli ICT, apa yang terjadi?",
-    "BaleBelajar memetakan fondasi yang dibutuhkan untuk jalur tersebut, lalu menyusun urutan belajar dari dasar: literasi, numerasi, logika, sains, komunikasi, dan proyek kecil.",
+    "Fondasinya dipetakan dulu, lalu disusun dari dasar: literasi, numerasi, logika, sampai proyek kecil.",
   ],
   [
     "Apakah sekolah harus mengganti kurikulum?",
-    "Tidak. BaleBelajar membantu memperjelas jalur belajar dan tindak lanjut, sehingga bisa menjadi lapisan pendamping di atas kurikulum sekolah yang sudah berjalan.",
+    "Tidak. BaleBelajar jadi lapisan pendamping di atas kurikulum yang sudah ada.",
   ],
   [
     "Apa yang diterima guru dan orang tua?",
-    "Guru mendapat peta fondasi, rekomendasi misi belajar, dan kelompok tindak lanjut. Orang tua mendapat bahasa progres yang lebih mudah dipahami.",
+    "Guru dapat peta fondasi dan rekomendasi misi. Orang tua dapat bahasa progres yang gampang dipahami.",
   ],
   [
     "Kenapa sekolah perlu membayar BaleBelajar?",
-    "Karena BaleBelajar menghemat waktu pemetaan, membuat tindak lanjut lebih jelas, dan memberi cerita progres yang bisa dipakai sekolah untuk meningkatkan pengalaman belajar siswa dan komunikasi orang tua.",
+    "Hasil pilot 4 minggunya yang menentukan. Harganya dibicarakan sesuai kebutuhan sekolah, bukan paket kaku untuk semua.",
   ],
 ];
 
 const valueCards = [
-  ["Untuk Kepala Sekolah", "Bukti progres yang mudah dijelaskan saat rapat, laporan, dan komunikasi orang tua.", School],
-  ["Untuk Guru", "Rekomendasi misi dan fondasi prioritas tanpa harus merancang semua dari nol.", GraduationCap],
-  ["Untuk Siswa", "Belajar terasa seperti perjalanan personal, bukan daftar tugas yang tidak ada ujungnya.", Sparkles],
-  ["Untuk Orang Tua", "Ringkasan yang manusiawi: anak sedang tumbuh ke arah apa dan bagaimana mendukungnya.", HeartHandshake],
+  ["Untuk Kepala Sekolah", "Bukti progres yang gampang dijelaskan ke orang tua dan rapat.", School],
+  ["Untuk Guru", "Rekomendasi misi siap pakai, tanpa merancang dari nol.", GraduationCap],
+  ["Untuk Siswa", "Belajar terasa personal, bukan daftar tugas tanpa ujung.", Sparkles],
+  ["Untuk Orang Tua", "Ringkasan manusiawi: anak tumbuh ke arah apa, dan caranya mendukung.", HeartHandshake],
 ];
 
 const premiumReasons = [
-  ["Lebih dari LMS", "Bukan tempat unggah materi. BaleBelajar membantu sekolah membaca arah belajar siswa."],
-  ["Lebih dari nilai", "Nilai akhir tidak cukup. Sekolah butuh mastery, fondasi, dan rekomendasi tindak lanjut."],
-  ["Lebih dari game", "Game hanya pintu masuk. Di baliknya ada peta kemampuan, misi, dan laporan yang bisa dipakai."],
+  ["Lebih dari LMS", "Bukan tempat unggah materi — kami baca arah belajar siswa."],
+  ["Lebih dari nilai", "Nilai akhir saja tidak cukup. Sekolah butuh mastery dan tindak lanjut."],
+  ["Lebih dari game", "Game cuma pintu masuk. Di baliknya ada peta kemampuan nyata."],
 ];
 
 export default function HomePage() {
@@ -175,7 +175,7 @@ function Hero() {
             initial={{ opacity: 0, y: 14 }}
           >
             <Sparkles className="shrink-0" size={17} />
-            <span className="min-w-0">Platform belajar personal untuk sekolah yang ingin siswanya lebih penasaran, terarah, dan terlihat progresnya.</span>
+            <span className="min-w-0">Pertanyaan yang paling sering kami dengar dari siswa SMP-SMA</span>
           </motion.div>
 
           <motion.h1
@@ -184,18 +184,17 @@ function Hero() {
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.06 }}
           >
-            Ubah cita-cita siswa menjadi peta belajar yang bisa dijalankan.
+            &ldquo;Buat apa sih aku belajar ini?&rdquo;
           </motion.h1>
 
           <motion.p
             animate={{ opacity: 1, y: 0 }}
-            className="mx-auto mt-5 max-w-3xl text-base font-semibold leading-7 text-slate-600 sm:text-lg sm:leading-8"
+            className="mx-auto mt-4 max-w-xl text-sm font-bold leading-6 text-slate-500 sm:text-base"
             initial={{ opacity: 0, y: 18 }}
             transition={{ delay: 0.12 }}
           >
-            BaleBelajar membantu sekolah membaca minat siswa, menemukan fondasi
-            yang perlu dikuatkan, lalu mengubahnya menjadi misi belajar personal
-            yang terasa seperti game dan tetap bisa dipantau guru.
+            Siswa pilih cita-citanya dulu. BaleBelajar ubah jadi misi belajar
+            harian yang punya alasan — guru tetap pantau progresnya.
           </motion.p>
 
           <motion.div
@@ -243,7 +242,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             transition={{ delay: 0.26 }}
           >
-            {["Layak jadi pilot berbayar", "Mudah dijelaskan ke orang tua", "Dirancang mobile-first"].map(
+            {["Bikin siswa penasaran duluan", "Progresnya gampang diceritakan ke orang tua", "Didesain buat HP siswa, bukan cuma laptop guru"].map(
               (item) => (
                 <span
                   className="inline-flex items-center gap-2 rounded-full bg-white/88 px-4 py-2 text-sm font-black text-slate-600 shadow-sm"
@@ -491,6 +490,9 @@ function TrustStrip() {
   return (
     <section className="bg-[#172033] px-4 py-4 text-white sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 md:justify-between">
+        <span className="hidden shrink-0 text-xs font-black uppercase tracking-wide text-[#f9c74f] md:inline">
+          Prinsip kami
+        </span>
         {trustItems.map((item) => (
           <div className="inline-flex items-center gap-2 text-sm font-black text-slate-200" key={item}>
             <ShieldCheck className="text-[#22c55e]" size={18} />
@@ -578,16 +580,16 @@ function CuriosityLoop() {
             <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
               Dalam beberapa klik, anak bisa melihat belajar itu menuju ke mana.
             </h2>
-            <p className="mt-4 font-semibold leading-8 text-slate-300">
-              Pengalaman pertama harus terasa ringan: pilih impian, lihat misi,
-              lalu paham kenapa pelajaran hari ini penting untuk masa depan.
+            <p className="mt-4 font-semibold leading-6 text-slate-400">
+              Pilih impian, lihat misi, langsung paham buat apa belajar hari
+              ini.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
                 href="/pilot"
               >
-                Coba Alur Pilot
+                Ajukan Pilot Sekolah
                 <ArrowRight size={18} />
               </Link>
               <a
@@ -634,20 +636,18 @@ function CareerBlueprint() {
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Anak pilih impian. BaleBelajar membuka jalurnya.
           </h2>
-          <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Daripada hanya bilang belajar yang rajin, BaleBelajar menunjukkan
-            alasan yang lebih konkret: pelajaran apa yang dibutuhkan, fondasi
-            mana yang harus dibangun, dan misi kecil apa yang bisa dimulai hari ini.
+          <p className="mt-4 font-semibold leading-7 text-slate-500">
+            Bukan cuma disuruh rajin belajar — BaleBelajar tunjukkan misi
+            kecil apa yang bisa dimulai hari ini.
           </p>
           <div className="mt-6 rounded-[8px] bg-[#172033] p-5 text-white">
             <Compass className="text-[#f9c74f]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
               Rahasianya sederhana: impian + fondasi + misi + progres.
             </p>
-            <p className="mt-2 font-semibold leading-7 text-slate-300">
-              Dari aku mau jadi detektif menjadi latihan membaca petunjuk,
-              logika, bahasa, data, sains, sampai proyek investigasi kecil yang
-              terasa seperti petualangan belajar.
+            <p className="mt-2 font-semibold leading-6 text-slate-400">
+              Dari &ldquo;aku mau jadi detektif&rdquo; jadi misi baca
+              petunjuk, sampai proyek investigasi kecil.
             </p>
           </div>
         </div>
@@ -687,10 +687,8 @@ function Problems() {
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Anak tidak cuma butuh nilai. Mereka butuh alasan untuk penasaran.
           </h2>
-          <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Ketika pelajaran terasa dekat dengan impian, siswa lebih mudah
-            bertanya, mencoba, dan kembali lagi. Itulah momen yang ingin
-            BaleBelajar bantu munculkan.
+          <p className="mt-4 font-semibold leading-7 text-slate-500">
+            Dekat dengan impian, siswa lebih mudah bertanya dan kembali lagi.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -797,9 +795,9 @@ function DashboardSection() {
         <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
           Dari dashboard, guru bisa melihat cerita di balik angka.
         </h2>
-        <p className="mt-4 font-semibold leading-8 text-slate-600">
-          Tujuan siswa, fondasi lintas pelajaran, prioritas belajar, dan misi
-          berikutnya muncul dalam satu alur yang mudah dipakai di kelas.
+        <p className="mt-4 font-semibold leading-7 text-slate-500">
+          Tujuan, fondasi, prioritas, dan misi berikutnya — satu alur, gampang
+          dipakai di kelas.
         </p>
       </div>
       <DashboardPreview />
@@ -837,9 +835,8 @@ function DashboardPreview() {
         <h3 className="font-heading mt-4 text-2xl font-black">
           Jalur belajar berbasis tujuan siswa
         </h3>
-        <p className="mt-2 font-semibold leading-7 text-slate-300">
-          Siswa tetap bisa belajar sesuai standar sekolah, tetapi misi dan
-          contoh latihannya dibuat lebih dekat dengan minat dan cita-citanya.
+        <p className="mt-2 font-semibold leading-6 text-slate-400">
+          Standar sekolah tetap jalan, misinya lebih dekat ke minat siswa.
         </p>
         <div className="mt-5 space-y-3">
           {[
@@ -876,16 +873,15 @@ function PremiumValue() {
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Sekolah tidak membeli aplikasi. Sekolah membeli kejelasan arah belajar.
           </h2>
-          <p className="mt-4 font-semibold leading-8 text-slate-300">
-            BaleBelajar menjembatani hal yang biasanya tercecer: minat siswa,
-            fondasi akademik, misi latihan, dan laporan progres yang bisa
-            dipakai untuk mengambil keputusan.
+          <p className="mt-4 font-semibold leading-6 text-slate-400">
+            BaleBelajar satukan yang biasanya tercecer: minat siswa, fondasi,
+            misi, dan laporan progres.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
             href="/pilot"
           >
-            Diskusikan Pilot Berbayar
+            Ajukan Pilot Sekolah
             <ArrowRight size={18} />
           </Link>
         </div>
@@ -923,9 +919,12 @@ function PricingSignal() {
             <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
               Mulai kecil. Tunjukkan hasil. Baru skalakan.
             </h2>
-            <p className="mt-3 max-w-2xl font-bold leading-7 text-white/88">
-              Cocok untuk sekolah yang ingin melihat apakah siswa lebih aktif
-              ketika pelajaran dihubungkan dengan cita-cita dan misi personal.
+            <p className="mt-3 max-w-2xl font-bold leading-6 text-white/80">
+              Cocok buat sekolah yang mau lihat siswa lebih aktif belajar.
+            </p>
+            <p className="mt-2 max-w-2xl text-sm font-bold leading-6 text-white/60">
+              Kami sengaja mulai dari beberapa sekolah dulu — biar
+              pendampingannya tetap dekat.
             </p>
           </div>
           <div className="grid gap-3 p-5 sm:grid-cols-3 sm:p-6">
@@ -964,7 +963,7 @@ function PricingSignal() {
             className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[8px] bg-[#172033] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#020617] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
             href="/pilot"
           >
-            Minta Proposal Pilot
+            Ajukan Pilot Sekolah
             <ArrowRight size={18} />
           </Link>
         </div>
@@ -982,18 +981,16 @@ function PilotPackage() {
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Validasi di satu kelas sebelum sekolah berinvestasi lebih besar.
           </h2>
-          <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Pilot dibuat ringkas: pilih kelas, pilih beberapa jalur impian,
-            jalankan misi, lalu lihat data progres yang bisa dipakai untuk
-            menentukan langkah berikutnya.
+          <p className="mt-4 font-semibold leading-7 text-slate-500">
+            Pilih kelas, pilih jalur impian, jalankan misi, lihat datanya.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            [Clock3, "Implementasi cepat", "Satu kelas, beberapa jalur impian, dan onboarding siswa yang ringan."],
-            [Target, "Prioritas jelas", "Guru melihat fondasi mana yang perlu dikuatkan lebih dulu."],
-            [UsersRound, "Engagement naik", "Siswa mendapat misi yang terasa nyambung dengan dunia yang ingin mereka coba."],
-            [TrendingUp, "Bahan keputusan", "Sekolah punya laporan awal untuk membaca minat, fondasi, dan potensi skala."],
+            [Clock3, "Implementasi cepat", "Satu kelas, beberapa jalur impian, onboarding ringan."],
+            [Target, "Prioritas jelas", "Guru langsung lihat fondasi mana yang perlu dikuatkan."],
+            [UsersRound, "Engagement naik", "Misinya nyambung dengan dunia yang ingin mereka coba."],
+            [TrendingUp, "Bahan keputusan", "Laporan awal buat baca minat, fondasi, dan potensi skala."],
           ].map(([Icon, title, text], index) => (
             <motion.div
               className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
@@ -1024,9 +1021,8 @@ function FAQSection() {
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Sebelum mulai, ini yang biasanya ditanyakan sekolah.
           </h2>
-          <p className="mt-4 font-semibold leading-8 text-slate-600">
-            Pilot dirancang jelas, terukur, dan tidak rumit agar tim sekolah
-            bisa fokus pada manfaatnya, bukan kerepotan teknisnya.
+          <p className="mt-4 font-semibold leading-7 text-slate-500">
+            Pilot dirancang simpel, biar tim sekolah fokus ke manfaatnya.
           </p>
         </div>
         <div className="grid gap-3">
@@ -1066,18 +1062,17 @@ function PilotSection() {
       <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#22c55e] text-white shadow-[0_10px_0_#129447] lg:grid-cols-[1fr_0.8fr]">
         <div className="p-7 sm:p-9">
           <h2 className="font-heading text-3xl font-black sm:text-4xl">
-            Siap melihat siswa lebih penasaran saat belajar?
+            Siap bikin siswamu berhenti tanya &ldquo;buat apa aku belajar
+            ini?&rdquo;
           </h2>
-          <p className="mt-3 max-w-2xl font-bold leading-7 text-white/88">
-            Ceritakan kondisi sekolah Anda. Kami bantu susun pilot yang jelas:
-            kelas sasaran, jalur impian, misi pertama, dashboard progres, dan
-            laporan yang bisa dipresentasikan.
+          <p className="mt-3 max-w-2xl font-bold leading-6 text-white/80">
+            Ceritakan kondisi sekolahmu. Kami bantu susun pilot yang jelas.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-white px-5 py-4 font-heading font-black text-[#15803d] shadow-[0_6px_0_#bbf7d0]"
             href="/pilot"
           >
-            Jadwalkan Konsultasi Pilot
+            Ajukan Pilot Sekolah
             <ArrowRight size={19} />
           </Link>
         </div>
@@ -1087,9 +1082,9 @@ function PilotSection() {
             <p className="font-heading mt-4 text-2xl font-black">
               Yang tadinya abstrak, dibuat kelihatan.
             </p>
-            <p className="mt-2 font-semibold leading-7 text-slate-600">
-              Dari impian siswa, fondasi belajar, sampai misi pertama yang bisa
-              dibahas guru, siswa, dan orang tua.
+            <p className="mt-2 font-semibold leading-6 text-slate-500">
+              Impian siswa, fondasi, sampai misi pertama — siap dibahas
+              bersama.
             </p>
           </div>
         </div>
@@ -1105,8 +1100,8 @@ function Footer() {
         <div>
           <p className="font-heading text-xl font-black">BaleBelajar</p>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Platform blueprint belajar yang menghubungkan minat, semua pelajaran,
-            dan cita-cita siswa ke kurikulum personal dari dasar.
+            Platform yang menghubungkan minat siswa ke kurikulum personal
+            dari dasar.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm font-bold text-slate-500">
