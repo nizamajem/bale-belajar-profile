@@ -9,18 +9,19 @@ import {
   Check,
   ClipboardCheck,
   Clock3,
-  Code2,
   Compass,
   GraduationCap,
   HeartHandshake,
   HelpCircle,
+  Languages,
   LineChart,
+  Lock,
   MessageCircle,
+  PawPrint,
   Search,
   School,
   ShieldCheck,
   Sparkles,
-  Stethoscope,
   Target,
   TrendingUp,
   UsersRound,
@@ -29,7 +30,7 @@ import {
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 const workflow = [
-  ["Tanya impian", "Detektif, dokter, ahli ICT, guru, atau jalur lain — siswa pilih sendiri."],
+  ["Tanya impian", "Detektif, dokter hewan, duta bahasa, atau jalur lain — siswa pilih sendiri."],
   ["Buka peta", "BaleBelajar baca fondasi yang sudah kuat dan yang masih bolong."],
   ["Racik jalur", "Kurikulum kecil tersusun dari dasar, bukan daftar acak."],
   ["Jalankan misi", "Misi harian yang nyambung sama cita-citanya."],
@@ -37,9 +38,9 @@ const workflow = [
 ];
 
 const trustItems = [
-  "Kami janji: tiap pelajaran ada alasannya",
+  "Tiap pelajaran dirancang punya alasan",
   "Cita-cita diubah jadi peta belajar, bukan slogan",
-  "Selalu mulai dari fondasi paling dasar, bukan loncat",
+  "Mulai dari fondasi paling dasar, bukan loncat",
   "Progres bisa diceritakan ke guru dan orang tua, bukan cuma angka",
 ];
 
@@ -74,28 +75,26 @@ const benefitCards = [
 const careerTracks = [
   {
     icon: Search,
-    title: "Detektif Junior",
+    title: "Detektif Muda",
     text: "Baca petunjuk, susun bukti, pakai logika dan sains sederhana.",
+    locked: false,
   },
   {
-    icon: Stethoscope,
-    title: "Dokter Masa Depan",
-    text: "Biologi dasar, numerasi, riset, sampai studi kasus ringan.",
+    icon: PawPrint,
+    title: "Dokter Hewan Muda",
+    text: "Rawat sahabat berbulu sambil asah kemampuan berhitung.",
+    locked: true,
   },
   {
-    icon: Code2,
-    title: "Anak ICT",
-    text: "Logika, matematika dasar, literasi digital, sampai proyek kecil.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Guru Inspiratif",
-    text: "Kuasai konsep, cara menjelaskan, dan empati di kelas.",
+    icon: Languages,
+    title: "Duta Bahasa Korea",
+    text: "Asah logika sambil bersiap jadi jembatan dua budaya.",
+    locked: true,
   },
 ];
 
 const curiosityCards = [
-  ["Pilih Impian", "Detektif, dokter, ICT, guru, atau lainnya."],
+  ["Pilih Impian", "Detektif, dokter hewan, duta bahasa, atau lainnya."],
   ["Buka Misi", "Pelajaran jadi tantangan kecil yang punya tujuan."],
   ["Lihat Progres", "Fondasi yang tumbuh, bukan cuma angka akhir."],
 ];
@@ -103,11 +102,11 @@ const curiosityCards = [
 const faqs = [
   [
     "Apakah BaleBelajar hanya untuk Matematika?",
-    "Tidak. Matematika cuma pilot awal — blueprint-nya untuk semua pelajaran.",
+    "Sekarang dunia yang sudah bisa dicoba: Matematika dan Deteksi & Logika. Dunia lain nyusul bertahap, bukan sekaligus semua pelajaran.",
   ],
   [
-    "Kalau siswa ingin jadi detektif, dokter, atau ahli ICT, apa yang terjadi?",
-    "Fondasinya dipetakan dulu, lalu disusun dari dasar: literasi, numerasi, logika, sampai proyek kecil.",
+    "Kalau siswa ingin jadi detektif atau profesi lain, apa yang terjadi?",
+    "Fondasinya dipetakan dulu, baru disusun dari dasar. Detektif Muda sudah bisa dicoba; jalur lain masih segera dibuka.",
   ],
   [
     "Apakah sekolah harus mengganti kurikulum?",
@@ -118,7 +117,7 @@ const faqs = [
     "Guru dapat peta fondasi dan rekomendasi misi. Orang tua dapat bahasa progres yang gampang dipahami.",
   ],
   [
-    "Kenapa sekolah perlu membayar BaleBelajar?",
+    "Kenapa sekolah perlu menggunakan BaleBelajar?",
     "Hasil pilot 4 minggunya yang menentukan. Harganya dibicarakan sesuai kebutuhan sekolah, bukan paket kaku untuk semua.",
   ],
 ];
@@ -361,108 +360,77 @@ function MascotOrbit() {
   );
 }
 
-function HeroMockup() {
-  const heatmap = [92, 76, 58, 84, 88, 62, 54, 78, 95, 86, 80, 68];
+const heroCareerCards = [
+  {
+    icon: Search,
+    title: "Detektif Muda",
+    tagline: "Amati petunjuk, uji bukti, pecahkan misteri.",
+    gradient: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
+    locked: false,
+  },
+  {
+    icon: PawPrint,
+    title: "Dokter Hewan Muda",
+    tagline: "Rawat sahabat berbulu sambil asah berhitung.",
+    gradient: "linear-gradient(135deg, #059669 0%, #065f46 100%)",
+    locked: true,
+  },
+  {
+    icon: Languages,
+    title: "Duta Bahasa Korea",
+    tagline: "Asah logika, jadi jembatan dua budaya.",
+    gradient: "linear-gradient(135deg, #db2777 0%, #9d174d 100%)",
+    locked: true,
+  },
+];
 
+function HeroMockup() {
   return (
     <div className="float-soft relative mx-auto w-full overflow-hidden rounded-[8px] border border-slate-200 bg-white p-2 shadow-[0_26px_80px_rgba(23,32,51,0.18)] sm:p-4">
       <div className="card-rise sparkle-pop absolute right-4 top-16 hidden rounded-[8px] bg-white px-4 py-3 shadow-xl md:block">
-        <p className="text-xs font-black uppercase text-slate-400">Misi terbuka</p>
-        <p className="font-heading text-lg font-black text-[#22c55e]">Kasus Hilang di Lab</p>
+        <p className="text-xs font-black uppercase text-slate-400">Tampilan siswa</p>
+        <p className="font-heading text-lg font-black text-[#22c55e]">Bukan dashboard guru</p>
       </div>
       <div className="card-rise absolute bottom-4 left-5 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl md:block [animation-delay:0.8s]">
-        <p className="text-xs font-black uppercase text-[#f9c74f]">Bale Buddy bilang</p>
-        <p className="font-heading text-lg font-black">Aulia cocok mulai dari logika</p>
+        <p className="text-xs font-black uppercase text-[#f9c74f]">Ini yang dilihat siswa</p>
+        <p className="font-heading text-lg font-black">Pilih dulu, baru mulai misi</p>
       </div>
 
       <div className="rounded-[8px] bg-[#f8fafc] p-3 sm:p-5">
-        <div className="mb-5 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
-          <div>
-            <p className="text-sm font-black uppercase text-[#2563eb]">Live blueprint preview</p>
-            <h2 className="font-heading text-xl font-black sm:text-2xl">Jalur Detektif Junior</h2>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <span className="w-fit rounded-full bg-[#dcfce7] px-3 py-1 text-sm font-black text-[#166534]">
-              Fondasi 82%
-            </span>
-            <span className="w-fit rounded-full bg-[#fff7ed] px-3 py-1 text-sm font-black text-[#c2410c]">
-              3 misi seru
-            </span>
-          </div>
-        </div>
+        <p className="text-sm font-black uppercase text-[#2563eb]">Mau jadi apa?</p>
+        <h2 className="font-heading text-xl font-black sm:text-2xl">
+          Pilih impian yang bikin kamu penasaran.
+        </h2>
 
-        <div className="mb-4 grid gap-2 sm:grid-cols-4">
-          {["Detektif", "Dokter", "ICT", "Guru"].map((track, index) => (
-            <motion.div
-              className={[
-                "rounded-[8px] px-3 py-2 text-center font-heading text-sm font-black shadow-sm",
-                index === 0
-                  ? "bg-[#172033] text-white"
-                  : "bg-white text-slate-500",
-              ].join(" ")}
-              initial={{ opacity: 0, y: 8 }}
-              key={track}
-              transition={{ delay: index * 0.04 }}
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {heroCareerCards.map((career, index) => (
+            <motion.article
+              className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-sm"
+              initial={{ opacity: 0, y: 10 }}
+              key={career.title}
+              transition={{ delay: index * 0.06 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              {track}
-            </motion.div>
+              <div className="p-4 text-white" style={{ background: career.gradient }}>
+                <career.icon size={22} />
+                <p className="font-heading mt-3 text-sm font-black leading-5">{career.title}</p>
+                <p className="mt-1 text-xs font-bold leading-5 text-white/78">{career.tagline}</p>
+              </div>
+              <div className="p-3">
+                {career.locked ? (
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-[8px] bg-slate-100 px-3 py-2 text-xs font-black text-slate-400">
+                    <Lock size={13} />
+                    Segera dibuka
+                  </span>
+                ) : (
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-[8px] bg-[#22c55e] px-3 py-2 text-xs font-black text-white shadow-[0_4px_0_#129447]">
+                    Mulai dari sini
+                    <ArrowRight size={13} />
+                  </span>
+                )}
+              </div>
+            </motion.article>
           ))}
-        </div>
-
-        <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[8px] bg-white p-3 shadow-sm">
-            <div className="min-w-0 overflow-hidden">
-              <div className="w-full">
-                <div className="mb-3 grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 text-[10px] font-black text-slate-400 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2 min-[390px]:text-xs">
-                  <span>Siswa</span>
-                  <span>Logika</span>
-                  <span>Bahasa</span>
-                  <span>Sains</span>
-                  <span>Data</span>
-                </div>
-                <div className="grid grid-cols-[56px_repeat(4,minmax(0,1fr))] gap-1 min-[390px]:grid-cols-[64px_repeat(4,minmax(0,1fr))] min-[390px]:gap-2">
-                  {["Aulia", "Bima", "Citra"].map((name, row) => (
-                    <div className="contents" key={name}>
-                      <div className="truncate rounded-[8px] bg-[#f8fafc] px-1.5 py-3 text-[11px] font-black min-[390px]:px-2 min-[390px]:text-xs">{name}</div>
-                      {heatmap.slice(row * 4, row * 4 + 4).map((score, index) => (
-                        <motion.div
-                          className={[
-                            "rounded-[8px] px-1 py-3 text-center font-heading text-sm font-black text-white shadow-sm min-[390px]:px-2",
-                            score >= 80 && "bg-[#22c55e]",
-                            score >= 60 && score < 80 && "bg-[#f9c74f] text-[#172033]",
-                            score < 60 && "bg-[#ff6b6b]",
-                          ]
-                            .filter(Boolean)
-                            .join(" ")}
-                          initial={{ opacity: 0, scale: 0.86 }}
-                          key={`${name}-${index}`}
-                          transition={{ delay: (row * 4 + index) * 0.035 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                        >
-                          {score}
-                        </motion.div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid gap-3">
-            {[
-              ["Cita-cita siswa", "Detektif investigasi", "#2563eb"],
-              ["Fondasi awal", "Logika, bahasa, observasi", "#22c55e"],
-              ["Misi minggu ini", "Pecahkan kasus mini", "#ff8a00"],
-            ].map(([label, value, color]) => (
-              <div className="rounded-[8px] bg-white p-3 shadow-sm" key={label}>
-                <span className="mb-2 block size-3 rounded-full" style={{ backgroundColor: color }} />
-                <p className="font-heading font-black leading-6">{value}</p>
-                <p className="text-xs font-bold text-slate-500">{label}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white">
@@ -652,7 +620,7 @@ function CareerBlueprint() {
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-3">
           {careerTracks.map((item, index) => (
             <motion.article
               className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
@@ -663,9 +631,17 @@ function CareerBlueprint() {
               whileHover={{ y: -4 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <span className="grid size-12 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
-                <item.icon size={25} />
-              </span>
+              <div className="flex items-start justify-between gap-2">
+                <span className="grid size-12 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+                  <item.icon size={25} />
+                </span>
+                {item.locked ? (
+                  <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-black text-slate-400">
+                    <Lock size={11} />
+                    Segera
+                  </span>
+                ) : null}
+              </div>
               <h3 className="font-heading mt-4 text-xl font-black">{item.title}</h3>
               <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{item.text}</p>
             </motion.article>
