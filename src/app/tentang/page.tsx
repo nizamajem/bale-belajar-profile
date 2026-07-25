@@ -52,9 +52,9 @@ export default function AboutPage() {
           </p>
 
           <p className="mt-6 max-w-xl font-bold leading-6 text-slate-500">
-            Kalau pelajaran nyambung ke cita-cita sendiri — detektif, dokter,
-            ICT, guru, apa pun — penasaran itu bisa kembali. Bukan ganti
-            kurikulum, cuma buka jalur belajar yang lebih personal di
+            Kalau pelajaran nyambung ke cita-cita sendiri — detektif, dokter
+            hewan, duta bahasa, apa pun — penasaran itu bisa kembali. Bukan
+            ganti kurikulum, cuma buka jalur belajar yang lebih personal di
             atasnya.
           </p>
 

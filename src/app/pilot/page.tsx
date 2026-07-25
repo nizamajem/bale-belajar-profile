@@ -67,7 +67,7 @@ export default function PilotPage() {
             <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {[
                 [ShieldCheck, "Jelas", "Pilot dimulai dengan tujuan, kelas, dan jalur cita-cita yang rapi."],
-                [UsersRound, "Fleksibel", "Bisa dimulai dari Matematika, ICT, sains, bahasa, atau lintas pelajaran."],
+                [UsersRound, "Fleksibel", "Sekarang jalan dari Matematika dan Deteksi & Logika, dunia lain menyusul."],
                 [Sparkles, "Didampingi", "Tim membantu membaca fondasi dan menyusun contoh misi belajar."],
               ].map(([Icon, title, text]) => (
                 <div className="rounded-[8px] bg-white/10 p-4" key={title as string}>
@@ -141,7 +141,7 @@ export default function PilotPage() {
                   <textarea
                     className="min-h-28 w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
                     name="message"
-                    placeholder="Contoh: siswa ingin jadi dokter, detektif, guru, dan ahli ICT. Kami ingin memetakan fondasi belajar dari dasar."
+                    placeholder="Contoh: siswa ingin jadi detektif, dokter hewan, atau duta bahasa. Kami ingin memetakan fondasi belajar dari dasar."
                   />
                 </label>
                 {error ? (
