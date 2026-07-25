@@ -6,18 +6,24 @@ import {
   ArrowRight,
   BarChart3,
   BookOpen,
+  Brain,
   Check,
   ClipboardCheck,
   Clock3,
   Compass,
+  Eye,
+  FileSearch,
   GraduationCap,
   HeartHandshake,
   HelpCircle,
+  History,
   Languages,
   LineChart,
   Lock,
   MessageCircle,
   PawPrint,
+  Puzzle,
+  Scale,
   Search,
   School,
   ShieldCheck,
@@ -99,6 +105,24 @@ const curiosityCards = [
   ["Lihat Progres", "Fondasi yang tumbuh, bukan cuma angka akhir."],
 ];
 
+const caseEvidence = [
+  ["Jadwal ruangan", "kuat"],
+  ["Log login komputer", "kuat"],
+  ["Pernyataan 4 siswa", "sedang"],
+  ["Riwayat perubahan file", "kuat"],
+  ["Foto ruangan", "lemah"],
+  ["Pesan grup", "sedang"],
+];
+
+const detectiveSkills = [
+  { icon: Eye, label: "Observasi" },
+  { icon: Brain, label: "Penalaran Logis" },
+  { icon: Puzzle, label: "Memori Kerja" },
+  { icon: History, label: "Kronologi" },
+  { icon: FileSearch, label: "Evaluasi Sumber" },
+  { icon: Scale, label: "Etika" },
+];
+
 const faqs = [
   [
     "Apakah BaleBelajar hanya untuk Matematika?",
@@ -145,6 +169,7 @@ export default function HomePage() {
       <TrustStrip />
       <CuriosityLoop />
       <CareerBlueprint />
+      <DetectiveShowcase />
       <Problems />
       <Workflow />
       <Benefits />
@@ -211,9 +236,9 @@ function Hero() {
             </Link>
             <a
               className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-6 py-4 font-heading font-black text-slate-700 shadow-[0_8px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
-              href="#dashboard"
+              href="#kasus"
             >
-              Lihat Demo Visual
+              Coba Kasus Aslinya
             </a>
           </motion.div>
 
@@ -271,6 +296,7 @@ function Hero() {
 
 function Navbar() {
   const mobileLinks = [
+    ["Kasus", "#kasus"],
     ["Cara Kerja", "#cara-kerja"],
     ["Manfaat", "#manfaat"],
     ["Dashboard", "#dashboard"],
@@ -290,6 +316,7 @@ function Navbar() {
         </Link>
         <div className="hidden items-center gap-4 text-xs font-black text-slate-600 md:flex lg:gap-6 lg:text-sm">
           <Link href="/">Beranda</Link>
+          <a className="whitespace-nowrap" href="#kasus">Kasus</a>
           <a className="whitespace-nowrap" href="#cara-kerja">Cara Kerja</a>
           <a href="#manfaat">Manfaat</a>
           <a href="#dashboard">Dashboard</a>
@@ -648,6 +675,96 @@ function CareerBlueprint() {
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
+function DetectiveShowcase() {
+  return (
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="kasus">
+      <motion.div
+        className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-xl"
+        initial={{ opacity: 0, y: 16 }}
+        transition={{ duration: 0.4 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <div className="bg-[#172033] p-6 text-white sm:p-8">
+          <p className="text-sm font-black uppercase text-[#f9c74f]">Contoh kasus asli</p>
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Bukan hafalan. Mikir kayak detektif beneran.
+          </h2>
+          <p className="mt-3 max-w-2xl font-semibold leading-6 text-slate-400">
+            Kasus yang beneran bisa dicoba siswa hari ini — bukan contoh karangan.
+          </p>
+        </div>
+
+        <div className="p-5 sm:p-8">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-black text-[#2563eb]">20 menit</span>
+            <span className="rounded-full bg-[#f0fdf4] px-3 py-1 text-xs font-black text-[#16a34a]">Detektif Muda</span>
+          </div>
+          <h3 className="font-heading mt-3 text-2xl font-black">Misteri Dokumen Presentasi</h3>
+          <p className="mt-2 max-w-2xl font-semibold leading-6 text-slate-500">
+            File presentasi tim hilang. 4 siswa pakai ruangan di jam berbeda.
+            Tugasnya: selidiki — tanpa langsung menuduh.
+          </p>
+
+          <p className="mt-6 text-xs font-black uppercase text-slate-400">Papan bukti</p>
+          <div className="mt-2 grid gap-2 sm:grid-cols-3">
+            {caseEvidence.map(([label, strength]) => (
+              <div
+                className="flex items-center gap-2 rounded-[8px] border border-slate-200 bg-[#f8fafc] px-3 py-2.5"
+                key={label}
+              >
+                <span
+                  className={[
+                    "size-2 shrink-0 rounded-full",
+                    strength === "kuat" && "bg-[#22c55e]",
+                    strength === "sedang" && "bg-[#f9c74f]",
+                    strength === "lemah" && "bg-slate-300",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                />
+                <span className="text-sm font-bold text-slate-600">{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-[8px] bg-[#fff7ed] p-5">
+            <p className="text-xs font-black uppercase text-[#c2410c]">Pertanyaan ke siswa</p>
+            <p className="font-heading mt-2 text-lg font-black leading-6 text-[#172033]">
+              &ldquo;Bukti ini cukup buat nuduh salah satu dari mereka?&rdquo;
+            </p>
+            <p className="mt-2 text-sm font-bold leading-6 text-slate-500">
+              Jawabannya: belum cukup. Detektif yang baik nggak buru-buru
+              menuduh.
+            </p>
+          </div>
+
+          <p className="mt-6 text-xs font-black uppercase text-slate-400">Skill yang dilatih</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {detectiveSkills.map((skill) => (
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-black text-slate-600"
+                key={skill.label}
+              >
+                <skill.icon className="text-[#2563eb]" size={14} />
+                {skill.label}
+              </span>
+            ))}
+          </div>
+
+          <Link
+            className="mt-7 inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+            href="/pilot"
+          >
+            Ajukan Pilot Sekolah
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </motion.div>
     </section>
   );
 }
