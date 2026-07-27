@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+const showLegacySections = false;
 
 const workflow = [
   ["Tanya impian", "Detektif, dokter hewan, duta bahasa, atau jalur lain — siswa pilih sendiri."],
@@ -204,24 +205,99 @@ export default function HomePage() {
     <main className="overflow-hidden">
       <SeoJsonLd />
       <Navbar />
-      <Hero />
-      <MetricsBand />
-      <TrustStrip />
-      <CuriosityLoop />
+      <SimpleHero />
       <CareerBlueprint />
-      <DetectiveShowcase />
-      <Problems />
-      <Workflow />
-      <Benefits />
       <CertificateSection />
-      <DashboardSection />
-      <PremiumValue />
-      <PilotPackage />
-      <PricingSignal />
       <FAQSection />
       <PilotSection />
       <Footer />
+      {showLegacySections ? (
+        <>
+          <Hero />
+          <MetricsBand />
+          <TrustStrip />
+          <CuriosityLoop />
+          <DetectiveShowcase />
+          <Problems />
+          <Workflow />
+          <Benefits />
+          <DashboardSection />
+          <PremiumValue />
+          <PilotPackage />
+          <PricingSignal />
+        </>
+      ) : null}
     </main>
+  );
+}
+
+function SimpleHero() {
+  return (
+    <section className="surface-grid relative overflow-hidden bg-[#f7fbff]">
+      <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 text-center sm:px-6 lg:px-8">
+        <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 14 }}>
+          <div className="mx-auto mb-6 grid size-32 place-items-center rounded-[8px] bg-[#22c55e] shadow-[0_10px_0_#129447] sm:size-40">
+            <div className="relative size-24 rounded-[8px] bg-white sm:size-28">
+              <div className="absolute left-6 top-8 size-4 rounded-full bg-[#172033] sm:left-7" />
+              <div className="absolute right-6 top-8 size-4 rounded-full bg-[#172033] sm:right-7" />
+              <div className="absolute left-1/2 top-14 h-4 w-10 -translate-x-1/2 rounded-b-full border-b-[6px] border-[#172033]" />
+              <BookOpen className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#22c55e]" size={28} />
+            </div>
+          </div>
+
+          <p className="text-sm font-black uppercase text-[#2563eb]">BaleCita Universe</p>
+          <h1 className="hero-title text-balance-soft font-heading mx-auto mt-3 max-w-4xl font-black leading-[1.04] text-[#172033]">
+            Belajar dari cita-cita, bukan dari daftar tugas.
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl font-bold leading-7 text-slate-500">
+            Pilih akademi, kerjakan misi pendek, naik level, lalu dapat bukti skill.
+          </p>
+
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-6 py-4 font-heading font-black text-white shadow-[0_8px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              href="/pilot"
+            >
+              Coba Pilot Sekolah
+              <ArrowRight size={19} />
+            </Link>
+            <a
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-6 py-4 font-heading font-black text-slate-700 shadow-[0_8px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              href={`${appUrl}/student/login`}
+            >
+              Masuk Platform
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto mt-10 grid max-w-6xl gap-3 sm:grid-cols-3 lg:grid-cols-5"
+          initial={{ opacity: 0, y: 16 }}
+          transition={{ delay: 0.12 }}
+        >
+          {heroCareerCards.map((career) => (
+            <article className="overflow-hidden rounded-[8px] border border-slate-200 bg-white text-left shadow-sm" key={career.title}>
+              <div className="p-4 text-white" style={{ background: career.gradient }}>
+                <career.icon size={23} />
+                <p className="font-heading mt-3 text-base font-black">{career.title}</p>
+                <p className="mt-1 text-xs font-bold leading-5 text-white/78">{career.tagline}</p>
+              </div>
+              <div className="p-3">
+                <span
+                  className={[
+                    "inline-flex w-full items-center justify-center rounded-[8px] px-3 py-2 text-xs font-black",
+                    career.locked ? "bg-slate-100 text-slate-400" : "bg-[#dcfce7] text-[#166534]",
+                  ].join(" ")}
+                >
+                  {career.locked ? "Segera dibuka" : "Aktif"}
+                </span>
+              </div>
+            </article>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -337,11 +413,8 @@ function Hero() {
 
 function Navbar() {
   const mobileLinks = [
-    ["Kasus", "#kasus"],
-    ["Cara Kerja", "#cara-kerja"],
-    ["Manfaat", "#manfaat"],
+    ["Akademi", "#akademi"],
     ["Sertifikat", "#sertifikat"],
-    ["Dashboard", "#dashboard"],
     ["FAQ", "#faq"],
     ["Tentang", "/tentang"],
     ["Kontak", "/kontak"],
@@ -358,11 +431,8 @@ function Navbar() {
         </Link>
         <div className="hidden items-center gap-4 text-xs font-black text-slate-600 md:flex lg:gap-6 lg:text-sm">
           <Link href="/">Beranda</Link>
-          <a className="whitespace-nowrap" href="#kasus">Kasus</a>
-          <a className="whitespace-nowrap" href="#cara-kerja">Cara Kerja</a>
-          <a href="#manfaat">Manfaat</a>
+          <a className="whitespace-nowrap" href="#akademi">Akademi</a>
           <a href="#sertifikat">Sertifikat</a>
-          <a href="#dashboard">Dashboard</a>
           <a href="#faq">FAQ</a>
           <Link href="/tentang">Tentang</Link>
           <Link href="/kontak">Kontak</Link>
@@ -707,7 +777,7 @@ function CuriosityLoop() {
 
 function CareerBlueprint() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="akademi">
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
           <p className="text-sm font-black uppercase text-[#2563eb]">
