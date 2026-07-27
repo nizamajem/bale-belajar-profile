@@ -17,19 +17,19 @@ const body = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_PROFILE_URL ?? "http://localhost:3001"),
   title: {
-    default: "BaleBelajar - Platform Belajar Personal Berbasis Cita-Cita Siswa",
+    default: "BaleBelajar - Kelas Belajar Berbasis Cita-Cita Siswa",
     template: "%s | BaleBelajar",
   },
   description:
-    "BaleBelajar membantu sekolah mengubah cita-cita siswa menjadi peta belajar personal, misi harian, mastery, dan laporan progres yang mudah dipahami guru dan orang tua.",
+    "BaleBelajar membantu siswa belajar lewat kelas cita-cita, misi pendek, sertifikat, dan laporan yang mudah dipahami guru serta orang tua.",
   keywords: [
     "platform belajar personal",
-    "kurikulum personal siswa",
+    "kelas cita-cita siswa",
     "edtech Indonesia",
     "platform pendidikan Lombok",
-    "peta cita-cita siswa",
+    "cita-cita siswa",
     "asesmen diagnostik siswa",
-    "dashboard progres siswa",
+    "laporan belajar siswa",
     "learning management system sekolah",
     "semua pelajaran",
     "teknologi pendidikan Indonesia",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "BaleBelajar - Dari Cita-Cita Jadi Peta Belajar Personal",
+    title: "BaleBelajar - Belajar dari Cita-Cita",
     description:
-      "Platform belajar personal untuk sekolah: siswa memilih impian, BaleBelajar menyusun misi, mastery, dan laporan progres yang bisa ditindaklanjuti.",
+      "Siswa memilih kelas cita-cita, mengerjakan misi pendek, mendapat sertifikat, dan guru bisa melihat hasil belajarnya.",
     type: "website",
     url: "/",
     locale: "id_ID",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BaleBelajar - Platform Belajar Personal untuk Sekolah",
     description:
-      "Ubah cita-cita siswa menjadi peta belajar, misi harian, dan progres yang jelas untuk guru, sekolah, dan orang tua.",
+      "Kelas cita-cita, misi pendek, sertifikat, dan laporan belajar yang mudah dipahami.",
   },
   robots: {
     index: true,

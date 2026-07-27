@@ -141,9 +141,9 @@ const careerTracks = [
 ];
 
 const curiosityCards = [
-  ["Pilih Akademi", "Ada 9 jalur cita-cita di BaleCita Universe."],
+  ["Pilih Kelas", "Ada 9 kelas cita-cita yang bisa dicoba."],
   ["Buka Misi", "Pelajaran jadi tantangan kecil yang punya tujuan."],
-  ["Lihat Progres", "Fondasi yang tumbuh, bukan cuma angka akhir."],
+  ["Lihat Hasil", "Kemampuan anak terlihat, bukan cuma nilai akhir."],
 ];
 
 const caseEvidence = [
@@ -166,24 +166,24 @@ const detectiveSkills = [
 
 const faqs = [
   [
-    "Apakah BaleBelajar hanya untuk Matematika?",
-    "Sekarang dunia yang sudah bisa dicoba: Matematika dan Deteksi & Logika. Dunia lain nyusul bertahap, bukan sekaligus semua pelajaran.",
+    "Apakah BaleBelajar hanya untuk satu pelajaran?",
+    "Tidak. Untuk awal, kelas Detektif dibuka dulu sebagai contoh. Kelas lain akan dibuka bertahap.",
   ],
   [
-    "Kalau siswa ingin jadi detektif atau profesi lain, apa yang terjadi?",
-    "Fondasinya dipetakan dulu, baru disusun dari dasar. Detektif Muda sudah bisa dicoba; jalur lain masih segera dibuka.",
+    "Kalau anak memilih cita-cita tertentu, apa yang terjadi?",
+    "Anak akan mendapat misi belajar yang sesuai dengan kelas pilihannya. Misinya pendek dan dimulai dari dasar.",
   ],
   [
     "Apakah sekolah harus mengganti kurikulum?",
     "Tidak. BaleBelajar jadi lapisan pendamping di atas kurikulum yang sudah ada.",
   ],
   [
-    "Apa yang diterima guru dan orang tua?",
-    "Guru dapat peta fondasi dan rekomendasi misi. Orang tua dapat bahasa progres yang gampang dipahami.",
+    "Apa yang dilihat guru dan orang tua?",
+    "Guru dan orang tua bisa melihat anak sudah kuat di bagian apa, perlu latihan apa, dan sertifikat apa yang didapat.",
   ],
   [
     "Kenapa sekolah perlu menggunakan BaleBelajar?",
-    "Hasil pilot 4 minggunya yang menentukan. Harganya dibicarakan sesuai kebutuhan sekolah, bukan paket kaku untuk semua.",
+    "Sekolah bisa mencoba dari satu kelas dulu. Setelah itu baru melihat apakah cocok untuk dipakai lebih luas.",
   ],
 ];
 
@@ -245,12 +245,12 @@ function SimpleHero() {
             </div>
           </div>
 
-          <p className="text-sm font-black uppercase text-[#2563eb]">BaleCita Universe</p>
+          <p className="text-sm font-black uppercase text-[#2563eb]">BaleBelajar</p>
           <h1 className="hero-title text-balance-soft font-heading mx-auto mt-3 max-w-4xl font-black leading-[1.04] text-[#172033]">
-            Belajar dari cita-cita, bukan dari daftar tugas.
+            Belajar jadi lebih seru saat anak tahu tujuannya.
           </h1>
           <p className="mx-auto mt-4 max-w-xl font-bold leading-7 text-slate-500">
-            Pilih akademi, kerjakan misi pendek, naik level, lalu dapat bukti skill.
+            Anak memilih kelas cita-cita, mengerjakan misi pendek, lalu mendapat sertifikat.
           </p>
 
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
@@ -267,6 +267,14 @@ function SimpleHero() {
             >
               Masuk Platform
             </a>
+          </div>
+          <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-500">
+            <Link className="hover:text-[#2563eb]" href="/kebijakan-privasi">
+              Kebijakan Privasi
+            </Link>
+            <Link className="hover:text-[#2563eb]" href="/ketentuan-penggunaan">
+              Ketentuan Penggunaan
+            </Link>
           </div>
         </motion.div>
 
@@ -413,11 +421,13 @@ function Hero() {
 
 function Navbar() {
   const mobileLinks = [
-    ["Akademi", "#akademi"],
+    ["Kelas", "#akademi"],
     ["Sertifikat", "#sertifikat"],
     ["FAQ", "#faq"],
     ["Tentang", "/tentang"],
     ["Kontak", "/kontak"],
+    ["Privasi", "/kebijakan-privasi"],
+    ["Ketentuan", "/ketentuan-penggunaan"],
   ];
 
   return (
@@ -431,11 +441,13 @@ function Navbar() {
         </Link>
         <div className="hidden items-center gap-4 text-xs font-black text-slate-600 md:flex lg:gap-6 lg:text-sm">
           <Link href="/">Beranda</Link>
-          <a className="whitespace-nowrap" href="#akademi">Akademi</a>
+          <a className="whitespace-nowrap" href="#akademi">Kelas</a>
           <a href="#sertifikat">Sertifikat</a>
           <a href="#faq">FAQ</a>
           <Link href="/tentang">Tentang</Link>
           <Link href="/kontak">Kontak</Link>
+          <Link href="/kebijakan-privasi">Privasi</Link>
+          <Link href="/ketentuan-penggunaan">Ketentuan</Link>
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <Link
@@ -692,7 +704,7 @@ function SeoJsonLd() {
     operatingSystem: "Web",
     url: profileUrl,
     description:
-      "Platform belajar personal untuk mengubah cita-cita siswa menjadi peta belajar, misi harian, mastery, dan laporan progres sekolah.",
+      "Kelas belajar berbasis cita-cita dengan misi pendek, sertifikat, dan laporan yang mudah dipahami sekolah.",
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -781,10 +793,10 @@ function CareerBlueprint() {
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
           <p className="text-sm font-black uppercase text-[#2563eb]">
-            9 Akademi BaleCita
+            9 Kelas Cita-Cita
           </p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Anak pilih akademi. BaleBelajar membuka jalurnya.
+            Anak pilih kelas. BaleBelajar siapkan misinya.
           </h2>
           <p className="mt-4 font-semibold leading-7 text-slate-500">
             Bukan cuma disuruh rajin belajar — BaleBelajar tunjukkan misi
@@ -793,7 +805,7 @@ function CareerBlueprint() {
           <div className="mt-6 rounded-[8px] bg-[#172033] p-5 text-white">
             <Compass className="text-[#f9c74f]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
-              Rahasianya sederhana: akademi + fondasi + misi + progres.
+              Sederhana: pilih kelas, mulai misi, lihat hasil.
             </p>
             <p className="mt-2 font-semibold leading-6 text-slate-400">
               Dari &ldquo;aku mau jadi detektif&rdquo; jadi misi baca
@@ -1033,9 +1045,9 @@ function Benefits() {
 
 function CertificateSection() {
   const proofItems = [
-    "Misi dan rank terlihat jelas",
-    "Skill yang naik bisa dibaca orang tua",
-    "Boss Case jadi bukti, bukan sekadar nilai",
+    "Misi yang selesai terlihat jelas",
+    "Kemampuan anak mudah dibaca orang tua",
+    "Sertifikat jadi bukti belajar",
   ];
 
   return (
@@ -1043,13 +1055,13 @@ function CertificateSection() {
       <div className="surface-grid absolute inset-0 opacity-60" />
       <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase text-[#c2410c]">Contoh yang diterima siswa</p>
+          <p className="text-sm font-black uppercase text-[#c2410c]">Contoh sertifikat</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Ini tampilan sertifikat BaleDetective setelah siswa menyelesaikan rank awal.
+            Setelah menyelesaikan kelas, anak mendapat sertifikat.
           </h2>
           <p className="mt-4 font-semibold leading-7 text-slate-500">
-            Calon siswa dan orang tua bisa melihat hasil akhirnya sejak awal: misi selesai,
-            rank, nilai, badge etika, Boss Case, skill yang naik, dan rekomendasi berikutnya.
+            Sertifikat berisi nama anak, kelas yang selesai, nilai, kemampuan yang naik,
+            dan saran kelas berikutnya.
           </p>
           <div className="mt-5 grid gap-3">
             {proofItems.map((item) => (
@@ -1066,7 +1078,7 @@ function CertificateSection() {
               className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
-              Ajukan pilot BaleDetective
+              Coba pilot sekolah
               <ArrowRight size={18} />
             </Link>
             <a
@@ -1107,7 +1119,7 @@ function CertificateMockup() {
             </span>
             <div>
               <p className="font-heading text-xl font-black">BaleBelajar</p>
-              <p className="text-xs font-black uppercase text-slate-400">BaleDetective Certificate</p>
+              <p className="text-xs font-black uppercase text-slate-400">Contoh Sertifikat</p>
             </div>
           </div>
           <p className="hidden text-right text-xs font-black uppercase text-[#2563eb] sm:block">
@@ -1118,17 +1130,17 @@ function CertificateMockup() {
         <div className="py-8 text-center">
           <Award className="mx-auto text-[#f59e0b]" size={64} />
           <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-[#2563eb]">
-            Sertifikat Keahlian BaleDetective
+            Sertifikat Kelas Detektif
           </p>
           <h3 className="font-heading mx-auto mt-3 max-w-xl text-4xl font-black leading-tight sm:text-5xl">
-            Rank Observer
+            Detektif Pemula
           </h3>
           <p className="mt-4 text-sm font-bold text-slate-500">Diberikan kepada</p>
           <p className="font-heading mt-1 text-4xl font-black text-[#6d28d9] sm:text-5xl">
             Alya Putri
           </p>
           <p className="mx-auto mt-4 max-w-lg text-sm font-bold leading-6 text-slate-600">
-            Telah menyelesaikan Detective Oath, misi observasi, fakta vs asumsi, evidence board, dan Boss Case pemula.
+            Telah menyelesaikan misi mengamati, memilih bukti, dan membuat kesimpulan sederhana.
           </p>
         </div>
 
@@ -1140,8 +1152,8 @@ function CertificateMockup() {
 
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {[
-            ["Skill yang didapat", "Observasi, fakta vs asumsi, bukti"],
-            ["Boss Case", "The Cup That Moved"],
+            ["Kemampuan", "Mengamati, memilih bukti, menulis alasan"],
+            ["Proyek akhir", "Laporan kasus sederhana"],
           ].map(([title, text]) => (
             <div className="rounded-[8px] bg-[#f8fafc] p-4" key={title}>
               <Medal className="text-[#2563eb]" size={22} />
@@ -1154,7 +1166,7 @@ function CertificateMockup() {
         <div className="mt-5 rounded-[8px] border border-[#bbf7d0] bg-[#f0fdf4] p-4">
           <p className="font-heading font-black text-[#166534]">Rekomendasi berikutnya</p>
           <p className="mt-1 text-sm font-bold leading-6 text-[#166534]">
-            Alya siap lanjut ke Evidence Harbor: memilih bukti yang kuat dan relevan.
+            Alya siap lanjut ke kelas berikutnya: memilih bukti yang lebih kuat.
           </p>
         </div>
       </div>
@@ -1406,12 +1418,12 @@ function FAQSection() {
     <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8" id="faq">
       <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="text-sm font-black uppercase text-[#ff8a00]">Pertanyaan umum</p>
+          <p className="text-sm font-black uppercase text-[#ff8a00]">FAQ</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Sebelum mulai, ini yang biasanya ditanyakan sekolah.
+            Yang sering ditanyakan sekolah.
           </h2>
           <p className="mt-4 font-semibold leading-7 text-slate-500">
-            Pilot dirancang simpel, biar tim sekolah fokus ke manfaatnya.
+            Jawaban singkat sebelum mencoba BaleBelajar.
           </p>
         </div>
         <div className="grid gap-3">
@@ -1451,17 +1463,16 @@ function PilotSection() {
       <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#22c55e] text-white shadow-[0_10px_0_#129447] lg:grid-cols-[1fr_0.8fr]">
         <div className="p-7 sm:p-9">
           <h2 className="font-heading text-3xl font-black sm:text-4xl">
-            Siap bikin siswamu berhenti tanya &ldquo;buat apa aku belajar
-            ini?&rdquo;
+            Mau coba BaleBelajar di sekolah Anda?
           </h2>
           <p className="mt-3 max-w-2xl font-bold leading-6 text-white/80">
-            Ceritakan kondisi sekolahmu. Kami bantu susun pilot yang jelas.
+            Mulai dari satu kelas dulu. Kami bantu siapkan alurnya.
           </p>
           <Link
             className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-white px-5 py-4 font-heading font-black text-[#15803d] shadow-[0_6px_0_#bbf7d0]"
             href="/pilot"
           >
-            Ajukan Pilot Sekolah
+            Coba Pilot Sekolah
             <ArrowRight size={19} />
           </Link>
         </div>
@@ -1469,7 +1480,7 @@ function PilotSection() {
           <div className="rounded-[8px] bg-white p-5 text-[#172033]">
             <MessageCircle className="text-[#22c55e]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
-              Yang tadinya abstrak, dibuat kelihatan.
+              Hasil belajar dibuat lebih jelas.
             </p>
             <p className="mt-2 font-semibold leading-6 text-slate-500">
               Impian siswa, fondasi, sampai misi pertama — siap dibahas
@@ -1489,13 +1500,12 @@ function Footer() {
         <div>
           <p className="font-heading text-xl font-black">BaleBelajar</p>
           <p className="mt-1 text-sm font-semibold text-slate-500">
-            Platform yang menghubungkan minat siswa ke kurikulum personal
-            dari dasar.
+            Kelas belajar berbasis cita-cita untuk siswa.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm font-bold text-slate-500">
           <Link href="/kebijakan-privasi">Kebijakan Privasi</Link>
-          <Link href="/ketentuan-penggunaan">Ketentuan</Link>
+          <Link href="/ketentuan-penggunaan">Ketentuan Penggunaan</Link>
           <Link href="/kontak">Kontak</Link>
         </div>
       </div>
