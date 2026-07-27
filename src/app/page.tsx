@@ -697,27 +697,28 @@ function DetectiveShowcase() {
         whileInView={{ opacity: 1, y: 0 }}
       >
         <div className="bg-[#172033] p-6 text-white sm:p-8">
-          <p className="text-sm font-black uppercase text-[#f9c74f]">Contoh kasus asli</p>
+          <p className="text-sm font-black uppercase text-[#f9c74f]">Contoh misi BaleDetective</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Bukan hafalan. Mikir kayak detektif beneran.
+            Misi pendek, seru, dan aman untuk belajar berpikir kritis.
           </h2>
           <p className="mt-3 max-w-2xl font-semibold leading-6 text-slate-400">
-            Kasus yang beneran bisa dicoba siswa hari ini — bukan contoh karangan.
+            Siswa melihat kasus, memilih bukti, lalu belajar dari keputusannya.
           </p>
         </div>
 
         <div className="p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-black text-[#2563eb]">20 menit</span>
-            <span className="rounded-full bg-[#f0fdf4] px-3 py-1 text-xs font-black text-[#16a34a]">Detektif Muda</span>
+            <span className="rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-black text-[#2563eb]">10-20 menit</span>
+            <span className="rounded-full bg-[#f0fdf4] px-3 py-1 text-xs font-black text-[#16a34a]">Rank Cadet</span>
+            <span className="rounded-full bg-[#fff7ed] px-3 py-1 text-xs font-black text-[#c2410c]">Aman dan etis</span>
           </div>
-          <h3 className="font-heading mt-3 text-2xl font-black">Misteri Dokumen Presentasi</h3>
+          <h3 className="font-heading mt-3 text-2xl font-black">Boss Case: Misteri Dokumen Presentasi</h3>
           <p className="mt-2 max-w-2xl font-semibold leading-6 text-slate-500">
             File presentasi tim hilang. 4 siswa pakai ruangan di jam berbeda.
             Tugasnya: selidiki — tanpa langsung menuduh.
           </p>
 
-          <p className="mt-6 text-xs font-black uppercase text-slate-400">Papan bukti</p>
+          <p className="mt-6 text-xs font-black uppercase text-slate-400">Evidence board</p>
           <div className="mt-2 grid gap-2 sm:grid-cols-3">
             {caseEvidence.map(([label, strength]) => (
               <div
@@ -745,8 +746,8 @@ function DetectiveShowcase() {
               &ldquo;Bukti ini cukup buat nuduh salah satu dari mereka?&rdquo;
             </p>
             <p className="mt-2 text-sm font-bold leading-6 text-slate-500">
-              Jawabannya: belum cukup. Detektif yang baik nggak buru-buru
-              menuduh.
+              Jawabannya: belum cukup. Siswa boleh memilih &ldquo;belum cukup bukti&rdquo;
+              kalau datanya belum kuat.
             </p>
           </div>
 
@@ -884,9 +885,9 @@ function Benefits() {
 
 function CertificateSection() {
   const proofItems = [
-    "Kelas yang diselesaikan terlihat jelas",
+    "Misi dan rank terlihat jelas",
     "Skill yang naik bisa dibaca orang tua",
-    "Proyek akhir jadi bukti, bukan sekadar nilai",
+    "Boss Case jadi bukti, bukan sekadar nilai",
   ];
 
   return (
@@ -896,11 +897,11 @@ function CertificateSection() {
         <div>
           <p className="text-sm font-black uppercase text-[#c2410c]">Contoh yang diterima siswa</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Ini tampilan sertifikat yang muncul setelah siswa menyelesaikan satu kelas.
+            Ini tampilan sertifikat BaleDetective setelah siswa menyelesaikan rank awal.
           </h2>
           <p className="mt-4 font-semibold leading-7 text-slate-500">
-            Calon siswa dan orang tua bisa melihat bentuk hasil akhirnya sejak awal: nama siswa,
-            kelas yang diselesaikan, nilai, skill yang dikuasai, proyek akhir, dan rekomendasi kelas berikutnya.
+            Calon siswa dan orang tua bisa melihat hasil akhirnya sejak awal: misi selesai,
+            rank, nilai, badge etika, Boss Case, skill yang naik, dan rekomendasi berikutnya.
           </p>
           <div className="mt-5 grid gap-3">
             {proofItems.map((item) => (
@@ -917,7 +918,7 @@ function CertificateSection() {
               className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
-              Ajukan pilot dengan sertifikat
+              Ajukan pilot BaleDetective
               <ArrowRight size={18} />
             </Link>
             <a
@@ -958,7 +959,7 @@ function CertificateMockup() {
             </span>
             <div>
               <p className="font-heading text-xl font-black">BaleBelajar</p>
-              <p className="text-xs font-black uppercase text-slate-400">Contoh Sertifikat Siswa</p>
+              <p className="text-xs font-black uppercase text-slate-400">BaleDetective Certificate</p>
             </div>
           </div>
           <p className="hidden text-right text-xs font-black uppercase text-[#2563eb] sm:block">
@@ -969,30 +970,30 @@ function CertificateMockup() {
         <div className="py-8 text-center">
           <Award className="mx-auto text-[#f59e0b]" size={64} />
           <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-[#2563eb]">
-            Sertifikat Keahlian Siswa
+            Sertifikat Keahlian BaleDetective
           </p>
           <h3 className="font-heading mx-auto mt-3 max-w-xl text-4xl font-black leading-tight sm:text-5xl">
-            Detektif Pemula
+            Rank Observer
           </h3>
           <p className="mt-4 text-sm font-bold text-slate-500">Diberikan kepada</p>
           <p className="font-heading mt-1 text-4xl font-black text-[#6d28d9] sm:text-5xl">
             Alya Putri
           </p>
           <p className="mx-auto mt-4 max-w-lg text-sm font-bold leading-6 text-slate-600">
-            Telah menyelesaikan kelas, proyek akhir, dan asesmen kemampuan membaca bukti, menyusun alasan, serta membuat kesimpulan yang adil.
+            Telah menyelesaikan Detective Oath, misi observasi, fakta vs asumsi, evidence board, dan Boss Case pemula.
           </p>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
           <CertificateStat label="Nilai akhir" value="91" />
-          <CertificateStat label="Modul" value="4/4" />
-          <CertificateStat label="Predikat" value="Sangat Baik" />
+          <CertificateStat label="Misi" value="4/4" />
+          <CertificateStat label="Badge" value="Etis" />
         </div>
 
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {[
-            ["Skill yang didapat", "Observasi, logika, evaluasi sumber"],
-            ["Proyek akhir", "Laporan Misteri Dokumen Presentasi"],
+            ["Skill yang didapat", "Observasi, fakta vs asumsi, bukti"],
+            ["Boss Case", "The Cup That Moved"],
           ].map(([title, text]) => (
             <div className="rounded-[8px] bg-[#f8fafc] p-4" key={title}>
               <Medal className="text-[#2563eb]" size={22} />
@@ -1005,7 +1006,7 @@ function CertificateMockup() {
         <div className="mt-5 rounded-[8px] border border-[#bbf7d0] bg-[#f0fdf4] p-4">
           <p className="font-heading font-black text-[#166534]">Rekomendasi berikutnya</p>
           <p className="mt-1 text-sm font-bold leading-6 text-[#166534]">
-            Alya siap lanjut ke Kelas Detektif Menengah: Analisis Saksi dan Motif.
+            Alya siap lanjut ke Evidence Harbor: memilih bukti yang kuat dan relevan.
           </p>
         </div>
       </div>
