@@ -85,26 +85,62 @@ const benefitCards = [
 const careerTracks = [
   {
     icon: Search,
-    title: "Detektif Muda",
+    title: "BaleDetective",
     text: "Baca petunjuk, susun bukti, pakai logika dan sains sederhana.",
     locked: false,
   },
   {
     icon: PawPrint,
-    title: "Dokter Hewan Muda",
-    text: "Rawat sahabat berbulu sambil asah kemampuan berhitung.",
+    title: "BaleVet",
+    text: "Rawat hewan sambil belajar sains, empati, dan data kesehatan.",
     locked: true,
   },
   {
     icon: Languages,
-    title: "Duta Bahasa Korea",
-    text: "Asah logika sambil bersiap jadi jembatan dua budaya.",
+    title: "BaleLanguage",
+    text: "Belajar bahasa, budaya, komunikasi, dan percaya diri.",
+    locked: true,
+  },
+  {
+    icon: Brain,
+    title: "BaleCode",
+    text: "Latih logika, pola, problem solving, dan proyek aplikasi kecil.",
+    locked: true,
+  },
+  {
+    icon: HeartHandshake,
+    title: "BaleMed",
+    text: "Kenali tubuh manusia, hidup sehat, dan keputusan berbasis bukti.",
+    locked: true,
+  },
+  {
+    icon: Compass,
+    title: "BaleBuild",
+    text: "Latih imajinasi ruang, desain, matematika visual, dan presentasi.",
+    locked: true,
+  },
+  {
+    icon: Target,
+    title: "BaleBiz",
+    text: "Cari masalah, buat solusi, hitung biaya, dan jual ide.",
+    locked: true,
+  },
+  {
+    icon: Sparkles,
+    title: "BaleCreator",
+    text: "Bangun ide, naskah, visual, storytelling, dan etika digital.",
+    locked: true,
+  },
+  {
+    icon: GraduationCap,
+    title: "BaleTeach",
+    text: "Latih cara menjelaskan, membantu teman, dan memimpin belajar.",
     locked: true,
   },
 ];
 
 const curiosityCards = [
-  ["Pilih Impian", "Detektif, dokter hewan, duta bahasa, atau lainnya."],
+  ["Pilih Akademi", "Ada 9 jalur cita-cita di BaleCita Universe."],
   ["Buka Misi", "Pelajaran jadi tantangan kecil yang punya tujuan."],
   ["Lihat Progres", "Fondasi yang tumbuh, bukan cuma angka akhir."],
 ];
@@ -397,23 +433,65 @@ function MascotOrbit() {
 const heroCareerCards = [
   {
     icon: Search,
-    title: "Detektif Muda",
+    title: "BaleDetective",
     tagline: "Amati petunjuk, uji bukti, pecahkan misteri.",
     gradient: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
     locked: false,
   },
   {
     icon: PawPrint,
-    title: "Dokter Hewan Muda",
-    tagline: "Rawat sahabat berbulu sambil asah berhitung.",
+    title: "BaleVet",
+    tagline: "Sains hewan, empati, dan data kesehatan.",
     gradient: "linear-gradient(135deg, #059669 0%, #065f46 100%)",
     locked: true,
   },
   {
     icon: Languages,
-    title: "Duta Bahasa Korea",
-    tagline: "Asah logika, jadi jembatan dua budaya.",
+    title: "BaleLanguage",
+    tagline: "Bahasa, budaya, dan komunikasi.",
     gradient: "linear-gradient(135deg, #db2777 0%, #9d174d 100%)",
+    locked: true,
+  },
+  {
+    icon: Brain,
+    title: "BaleCode",
+    tagline: "Logika, pola, dan aplikasi kecil.",
+    gradient: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
+    locked: true,
+  },
+  {
+    icon: HeartHandshake,
+    title: "BaleMed",
+    tagline: "Tubuh manusia dan hidup sehat.",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #155e75 100%)",
+    locked: true,
+  },
+  {
+    icon: Compass,
+    title: "BaleBuild",
+    tagline: "Ruang, desain, dan matematika visual.",
+    gradient: "linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)",
+    locked: true,
+  },
+  {
+    icon: Target,
+    title: "BaleBiz",
+    tagline: "Masalah, solusi, biaya, dan ide.",
+    gradient: "linear-gradient(135deg, #ea580c 0%, #9a3412 100%)",
+    locked: true,
+  },
+  {
+    icon: Sparkles,
+    title: "BaleCreator",
+    tagline: "Ide, naskah, visual, dan etika digital.",
+    gradient: "linear-gradient(135deg, #dc2626 0%, #991b1b 100%)",
+    locked: true,
+  },
+  {
+    icon: GraduationCap,
+    title: "BaleTeach",
+    tagline: "Menjelaskan, membantu, dan memimpin belajar.",
+    gradient: "linear-gradient(135deg, #16a34a 0%, #166534 100%)",
     locked: true,
   },
 ];
@@ -427,16 +505,16 @@ function HeroMockup() {
       </div>
       <div className="card-rise absolute bottom-4 left-5 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl md:block [animation-delay:0.8s]">
         <p className="text-xs font-black uppercase text-[#f9c74f]">Ini yang dilihat siswa</p>
-        <p className="font-heading text-lg font-black">Pilih dulu, baru mulai misi</p>
+        <p className="font-heading text-lg font-black">9 akademi, mulai dari satu misi</p>
       </div>
 
       <div className="rounded-[8px] bg-[#f8fafc] p-3 sm:p-5">
-        <p className="text-sm font-black uppercase text-[#2563eb]">Mau jadi apa?</p>
+        <p className="text-sm font-black uppercase text-[#2563eb]">BaleCita Universe</p>
         <h2 className="font-heading text-xl font-black sm:text-2xl">
-          Pilih impian yang bikin kamu penasaran.
+          Pilih akademi yang bikin kamu penasaran.
         </h2>
 
-        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {heroCareerCards.map((career, index) => (
             <motion.article
               className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-sm"
@@ -583,7 +661,7 @@ function CuriosityLoop() {
               Dalam beberapa klik, anak bisa melihat belajar itu menuju ke mana.
             </h2>
             <p className="mt-4 font-semibold leading-6 text-slate-400">
-              Pilih impian, lihat misi, langsung paham buat apa belajar hari
+              Pilih akademi, lihat misi, langsung paham buat apa belajar hari
               ini.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -633,10 +711,10 @@ function CareerBlueprint() {
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
           <p className="text-sm font-black uppercase text-[#2563eb]">
-            Product blueprint
+            9 Akademi BaleCita
           </p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
-            Anak pilih impian. BaleBelajar membuka jalurnya.
+            Anak pilih akademi. BaleBelajar membuka jalurnya.
           </h2>
           <p className="mt-4 font-semibold leading-7 text-slate-500">
             Bukan cuma disuruh rajin belajar — BaleBelajar tunjukkan misi
@@ -645,7 +723,7 @@ function CareerBlueprint() {
           <div className="mt-6 rounded-[8px] bg-[#172033] p-5 text-white">
             <Compass className="text-[#f9c74f]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
-              Rahasianya sederhana: impian + fondasi + misi + progres.
+              Rahasianya sederhana: akademi + fondasi + misi + progres.
             </p>
             <p className="mt-2 font-semibold leading-6 text-slate-400">
               Dari &ldquo;aku mau jadi detektif&rdquo; jadi misi baca
@@ -654,7 +732,7 @@ function CareerBlueprint() {
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {careerTracks.map((item, index) => (
             <motion.article
               className="rounded-[8px] border border-slate-200 bg-white p-5 shadow-sm"
@@ -984,7 +1062,7 @@ function CertificateMockup() {
           </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <CertificateStat label="Nilai akhir" value="91" />
           <CertificateStat label="Misi" value="4/4" />
           <CertificateStat label="Badge" value="Etis" />
