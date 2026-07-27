@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
+  Award,
   BarChart3,
   BookOpen,
   Brain,
   Check,
+  CheckCircle2,
   ClipboardCheck,
   Clock3,
   Compass,
+  Download,
   Eye,
   FileSearch,
   GraduationCap,
@@ -20,6 +23,7 @@ import {
   Languages,
   LineChart,
   Lock,
+  Medal,
   MessageCircle,
   PawPrint,
   Puzzle,
@@ -173,6 +177,7 @@ export default function HomePage() {
       <Problems />
       <Workflow />
       <Benefits />
+      <CertificateSection />
       <DashboardSection />
       <PremiumValue />
       <PilotPackage />
@@ -299,6 +304,7 @@ function Navbar() {
     ["Kasus", "#kasus"],
     ["Cara Kerja", "#cara-kerja"],
     ["Manfaat", "#manfaat"],
+    ["Sertifikat", "#sertifikat"],
     ["Dashboard", "#dashboard"],
     ["FAQ", "#faq"],
     ["Tentang", "/tentang"],
@@ -319,6 +325,7 @@ function Navbar() {
           <a className="whitespace-nowrap" href="#kasus">Kasus</a>
           <a className="whitespace-nowrap" href="#cara-kerja">Cara Kerja</a>
           <a href="#manfaat">Manfaat</a>
+          <a href="#sertifikat">Sertifikat</a>
           <a href="#dashboard">Dashboard</a>
           <a href="#faq">FAQ</a>
           <Link href="/tentang">Tentang</Link>
@@ -872,6 +879,146 @@ function Benefits() {
         ))}
       </div>
     </section>
+  );
+}
+
+function CertificateSection() {
+  const proofItems = [
+    "Kelas yang diselesaikan terlihat jelas",
+    "Skill yang naik bisa dibaca orang tua",
+    "Proyek akhir jadi bukti, bukan sekadar nilai",
+  ];
+
+  return (
+    <section className="relative overflow-hidden bg-[#f8fafc] px-4 py-16 sm:px-6 lg:px-8" id="sertifikat">
+      <div className="surface-grid absolute inset-0 opacity-60" />
+      <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div>
+          <p className="text-sm font-black uppercase text-[#c2410c]">Contoh yang diterima siswa</p>
+          <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
+            Ini tampilan sertifikat yang muncul setelah siswa menyelesaikan satu kelas.
+          </h2>
+          <p className="mt-4 font-semibold leading-7 text-slate-500">
+            Calon siswa dan orang tua bisa melihat bentuk hasil akhirnya sejak awal: nama siswa,
+            kelas yang diselesaikan, nilai, skill yang dikuasai, proyek akhir, dan rekomendasi kelas berikutnya.
+          </p>
+          <div className="mt-5 grid gap-3">
+            {proofItems.map((item) => (
+              <div className="flex items-center gap-3 rounded-[8px] border border-slate-200 bg-white p-4 shadow-sm" key={item}>
+                <span className="grid size-9 shrink-0 place-items-center rounded-[8px] bg-[#dcfce7] text-[#166534]">
+                  <CheckCircle2 size={20} />
+                </span>
+                <p className="font-heading font-black text-[#172033]">{item}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              href="/pilot"
+            >
+              Ajukan pilot dengan sertifikat
+              <ArrowRight size={18} />
+            </Link>
+            <a
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-5 py-4 font-heading font-black text-slate-700 shadow-[0_7px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              href={`${appUrl}/demo/certificate`}
+            >
+              <Download size={18} />
+              Lihat versi lengkap
+            </a>
+          </div>
+        </div>
+
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, y: 18 }}
+          viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          <div className="absolute -right-4 -top-4 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl sm:block">
+            <p className="text-xs font-black uppercase text-[#f9c74f]">Preview di profil siswa</p>
+            <p className="font-heading text-lg font-black">Muncul setelah kelas selesai</p>
+          </div>
+          <CertificateMockup />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function CertificateMockup() {
+  return (
+    <div className="relative mx-auto max-w-2xl rounded-[8px] bg-[#172033] p-3 shadow-[0_26px_80px_rgba(23,32,51,0.22)]">
+      <div className="overflow-hidden rounded-[8px] border-[10px] border-[#172033] bg-[#fffdf7] p-5 sm:p-7">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="grid size-12 place-items-center rounded-[8px] bg-[#22c55e] text-white shadow-[0_5px_0_#129447]">
+              <BookOpen size={25} />
+            </span>
+            <div>
+              <p className="font-heading text-xl font-black">BaleBelajar</p>
+              <p className="text-xs font-black uppercase text-slate-400">Contoh Sertifikat Siswa</p>
+            </div>
+          </div>
+          <p className="hidden text-right text-xs font-black uppercase text-[#2563eb] sm:block">
+            No. BB-DTC-2026-001
+          </p>
+        </div>
+
+        <div className="py-8 text-center">
+          <Award className="mx-auto text-[#f59e0b]" size={64} />
+          <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-[#2563eb]">
+            Sertifikat Keahlian Siswa
+          </p>
+          <h3 className="font-heading mx-auto mt-3 max-w-xl text-4xl font-black leading-tight sm:text-5xl">
+            Detektif Pemula
+          </h3>
+          <p className="mt-4 text-sm font-bold text-slate-500">Diberikan kepada</p>
+          <p className="font-heading mt-1 text-4xl font-black text-[#6d28d9] sm:text-5xl">
+            Alya Putri
+          </p>
+          <p className="mx-auto mt-4 max-w-lg text-sm font-bold leading-6 text-slate-600">
+            Telah menyelesaikan kelas, proyek akhir, dan asesmen kemampuan membaca bukti, menyusun alasan, serta membuat kesimpulan yang adil.
+          </p>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          <CertificateStat label="Nilai akhir" value="91" />
+          <CertificateStat label="Modul" value="4/4" />
+          <CertificateStat label="Predikat" value="Sangat Baik" />
+        </div>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {[
+            ["Skill yang didapat", "Observasi, logika, evaluasi sumber"],
+            ["Proyek akhir", "Laporan Misteri Dokumen Presentasi"],
+          ].map(([title, text]) => (
+            <div className="rounded-[8px] bg-[#f8fafc] p-4" key={title}>
+              <Medal className="text-[#2563eb]" size={22} />
+              <p className="font-heading mt-2 font-black">{title}</p>
+              <p className="mt-1 text-sm font-bold leading-5 text-slate-500">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5 rounded-[8px] border border-[#bbf7d0] bg-[#f0fdf4] p-4">
+          <p className="font-heading font-black text-[#166534]">Rekomendasi berikutnya</p>
+          <p className="mt-1 text-sm font-bold leading-6 text-[#166534]">
+            Alya siap lanjut ke Kelas Detektif Menengah: Analisis Saksi dan Motif.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CertificateStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-[8px] border border-slate-200 bg-white p-4 text-center shadow-sm">
+      <p className="font-heading text-3xl font-black text-[#172033]">{value}</p>
+      <p className="mt-1 text-xs font-black uppercase text-slate-400">{label}</p>
+    </div>
   );
 }
 
