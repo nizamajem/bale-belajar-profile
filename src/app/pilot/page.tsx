@@ -45,7 +45,7 @@ export default function PilotPage() {
     <main className="surface-grid min-h-screen px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <Link
-          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#2563eb]"
+          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#0E3A5F]"
           href="/"
         >
           <ArrowLeft size={18} />
@@ -54,7 +54,7 @@ export default function PilotPage() {
 
         <section className="grid overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-xl lg:grid-cols-[0.85fr_1.15fr]">
           <div className="bg-[#172033] p-6 text-white sm:p-8">
-            <p className="text-sm font-black uppercase text-[#f9c74f]">
+            <p className="text-sm font-black uppercase text-[#F4B400]">
               Blueprint pilot
             </p>
             <h1 className="font-heading mt-3 text-3xl font-black leading-tight sm:text-4xl">
@@ -139,7 +139,7 @@ export default function PilotPage() {
                     Pesan
                   </span>
                   <textarea
-                    className="min-h-28 w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
+                    className="min-h-28 w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#F4B400]"
                     name="message"
                     placeholder="Contoh: siswa ingin jadi detektif, dokter hewan, atau duta bahasa. Kami ingin memetakan fondasi belajar dari dasar."
                   />
@@ -191,7 +191,7 @@ function Field({
         {label}
       </span>
       <input
-        className="w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#2563eb]"
+        className="w-full rounded-[8px] border-2 border-slate-200 px-4 py-3 font-bold outline-none focus:border-[#F4B400]"
         autoComplete={autoComplete}
         inputMode={inputMode}
         min={min}

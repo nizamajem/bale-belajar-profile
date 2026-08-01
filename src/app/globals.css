@@ -153,10 +153,10 @@ textarea {
 @keyframes node-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(249, 199, 79, 0.28);
+    box-shadow: 0 0 0 0 rgba(244, 180, 0, 0.28);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(249, 199, 79, 0);
+    box-shadow: 0 0 0 8px rgba(244, 180, 0, 0);
   }
 }
 

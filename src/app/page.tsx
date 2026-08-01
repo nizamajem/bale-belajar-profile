@@ -67,7 +67,7 @@ const benefitCards = [
     icon: GraduationCap,
     title: "Untuk Siswa",
     text: "Belajar terasa seperti buka level baru menuju impiannya.",
-    tone: "bg-[#eff6ff] text-[#2563eb]",
+    tone: "bg-[#FFF3E0] text-[#0E3A5F]",
   },
   {
     icon: UsersRound,
@@ -245,7 +245,7 @@ function SimpleHero() {
             </div>
           </div>
 
-          <p className="text-sm font-black uppercase text-[#2563eb]">BaleBelajar</p>
+          <p className="text-sm font-black uppercase text-[#0E3A5F]">BaleBelajar</p>
           <h1 className="hero-title text-balance-soft font-heading mx-auto mt-3 max-w-4xl font-black leading-[1.04] text-[#172033]">
             Belajar jadi lebih seru saat anak tahu tujuannya.
           </h1>
@@ -269,10 +269,10 @@ function SimpleHero() {
             </a>
           </div>
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-500">
-            <Link className="hover:text-[#2563eb]" href="/kebijakan-privasi">
+            <Link className="hover:text-[#0E3A5F]" href="/kebijakan-privasi">
               Kebijakan Privasi
             </Link>
-            <Link className="hover:text-[#2563eb]" href="/ketentuan-penggunaan">
+            <Link className="hover:text-[#0E3A5F]" href="/ketentuan-penggunaan">
               Ketentuan Penggunaan
             </Link>
           </div>
@@ -320,7 +320,7 @@ function Hero() {
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mb-5 inline-flex max-w-full items-start gap-2 rounded-full border border-[#bfdbfe] bg-white/94 px-3 py-2 text-left text-xs font-black leading-5 text-[#1d4ed8] shadow-sm sm:items-center sm:px-4 sm:text-sm"
+            className="mb-5 inline-flex max-w-full items-start gap-2 rounded-full border border-[#F1D8B4] bg-white/94 px-3 py-2 text-left text-xs font-black leading-5 text-[#0E3A5F] shadow-sm sm:items-center sm:px-4 sm:text-sm"
             initial={{ opacity: 0, y: 14 }}
           >
             <Sparkles className="shrink-0" size={17} />
@@ -586,12 +586,12 @@ function HeroMockup() {
         <p className="font-heading text-lg font-black text-[#22c55e]">Bukan dashboard guru</p>
       </div>
       <div className="card-rise absolute bottom-4 left-5 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl md:block [animation-delay:0.8s]">
-        <p className="text-xs font-black uppercase text-[#f9c74f]">Ini yang dilihat siswa</p>
+        <p className="text-xs font-black uppercase text-[#F4B400]">Ini yang dilihat siswa</p>
         <p className="font-heading text-lg font-black">9 akademi, mulai dari satu misi</p>
       </div>
 
       <div className="rounded-[8px] bg-[#f8fafc] p-3 sm:p-5">
-        <p className="text-sm font-black uppercase text-[#2563eb]">BaleCita Universe</p>
+        <p className="text-sm font-black uppercase text-[#0E3A5F]">BaleCita Universe</p>
         <h2 className="font-heading text-xl font-black sm:text-2xl">
           Pilih akademi yang bikin kamu penasaran.
         </h2>
@@ -630,7 +630,7 @@ function HeroMockup() {
         <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white">
           <div className="mb-3 flex items-center justify-between gap-3">
             <p className="font-heading font-black">Kurikulum dari dasar</p>
-            <span className="pulse-soft rounded-full bg-white/10 px-3 py-1 text-xs font-black text-[#f9c74f]">Personal</span>
+            <span className="pulse-soft rounded-full bg-white/10 px-3 py-1 text-xs font-black text-[#F4B400]">Personal</span>
           </div>
           <div className="grid gap-2 sm:grid-cols-3">
             {["Fondasi", "Misi profesi", "Karya kecil"].map((item, index) => (
@@ -652,7 +652,7 @@ function TrustStrip() {
   return (
     <section className="bg-[#172033] px-4 py-4 text-white sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 md:justify-between">
-        <span className="hidden shrink-0 text-xs font-black uppercase tracking-wide text-[#f9c74f] md:inline">
+        <span className="hidden shrink-0 text-xs font-black uppercase tracking-wide text-[#F4B400] md:inline">
           Prinsip kami
         </span>
         {trustItems.map((item) => (
@@ -682,7 +682,7 @@ function MetricsBand() {
             viewport={{ once: true }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <Icon className="mb-3 text-[#2563eb]" size={24} />
+            <Icon className="mb-3 text-[#0E3A5F]" size={24} />
             <p className="font-heading text-3xl font-black text-[#172033]">
               {value as string}
             </p>
@@ -736,7 +736,7 @@ function CuriosityLoop() {
       <div className="overflow-hidden rounded-[8px] bg-[#172033] p-5 text-white shadow-[0_10px_0_#0f172a] sm:p-7">
         <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-sm font-black uppercase text-[#f9c74f]">
+            <p className="text-sm font-black uppercase text-[#F4B400]">
               Yang bikin penasaran
             </p>
             <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
@@ -773,7 +773,7 @@ function CuriosityLoop() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <span className="mission-node-active grid size-10 place-items-center rounded-[8px] bg-[#f9c74f] font-heading font-black text-[#172033]">
+                <span className="mission-node-active grid size-10 place-items-center rounded-[8px] bg-[#F4B400] font-heading font-black text-[#172033]">
                   {index + 1}
                 </span>
                 <h3 className="font-heading mt-4 text-xl font-black">{title}</h3>
@@ -792,7 +792,7 @@ function CareerBlueprint() {
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="akademi">
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
         <div>
-          <p className="text-sm font-black uppercase text-[#2563eb]">
+          <p className="text-sm font-black uppercase text-[#0E3A5F]">
             9 Kelas Cita-Cita
           </p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
@@ -803,7 +803,7 @@ function CareerBlueprint() {
             kecil apa yang bisa dimulai hari ini.
           </p>
           <div className="mt-6 rounded-[8px] bg-[#172033] p-5 text-white">
-            <Compass className="text-[#f9c74f]" size={28} />
+            <Compass className="text-[#F4B400]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
               Sederhana: pilih kelas, mulai misi, lihat hasil.
             </p>
@@ -826,7 +826,7 @@ function CareerBlueprint() {
               whileInView={{ opacity: 1, y: 0 }}
             >
               <div className="flex items-start justify-between gap-2">
-                <span className="grid size-12 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+                <span className="grid size-12 place-items-center rounded-[8px] bg-[#FFF3E0] text-[#0E3A5F]">
                   <item.icon size={25} />
                 </span>
                 {item.locked ? (
@@ -857,7 +857,7 @@ function DetectiveShowcase() {
         whileInView={{ opacity: 1, y: 0 }}
       >
         <div className="bg-[#172033] p-6 text-white sm:p-8">
-          <p className="text-sm font-black uppercase text-[#f9c74f]">Contoh misi BaleDetective</p>
+          <p className="text-sm font-black uppercase text-[#F4B400]">Contoh misi BaleDetective</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Misi pendek, seru, dan aman untuk belajar berpikir kritis.
           </h2>
@@ -868,7 +868,7 @@ function DetectiveShowcase() {
 
         <div className="p-5 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-[#eff6ff] px-3 py-1 text-xs font-black text-[#2563eb]">10-20 menit</span>
+            <span className="rounded-full bg-[#FFF3E0] px-3 py-1 text-xs font-black text-[#0E3A5F]">10-20 menit</span>
             <span className="rounded-full bg-[#f0fdf4] px-3 py-1 text-xs font-black text-[#16a34a]">Rank Cadet</span>
             <span className="rounded-full bg-[#fff7ed] px-3 py-1 text-xs font-black text-[#c2410c]">Aman dan etis</span>
           </div>
@@ -889,7 +889,7 @@ function DetectiveShowcase() {
                   className={[
                     "size-2 shrink-0 rounded-full",
                     strength === "kuat" && "bg-[#22c55e]",
-                    strength === "sedang" && "bg-[#f9c74f]",
+                    strength === "sedang" && "bg-[#F4B400]",
                     strength === "lemah" && "bg-slate-300",
                   ]
                     .filter(Boolean)
@@ -918,7 +918,7 @@ function DetectiveShowcase() {
                 className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-black text-slate-600"
                 key={skill.label}
               >
-                <skill.icon className="text-[#2563eb]" size={14} />
+                <skill.icon className="text-[#0E3A5F]" size={14} />
                 {skill.label}
               </span>
             ))}
@@ -981,7 +981,7 @@ function Workflow() {
     >
       <div className="absolute inset-x-0 top-0 h-px bg-white/20" />
       <div className="mx-auto max-w-7xl">
-        <p className="text-sm font-black uppercase text-[#f9c74f]">Cara kerja</p>
+        <p className="text-sm font-black uppercase text-[#F4B400]">Cara kerja</p>
         <h2 className="section-title text-balance-soft font-heading mt-2 max-w-3xl font-black">
           Tidak perlu mulai besar. Mulai dari satu impian, lalu lihat jalurnya terbuka.
         </h2>
@@ -1015,7 +1015,7 @@ function Benefits() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8" id="manfaat">
       <div className="mb-7 max-w-3xl">
-        <p className="text-sm font-black uppercase text-[#2563eb]">Manfaat</p>
+        <p className="text-sm font-black uppercase text-[#0E3A5F]">Manfaat</p>
         <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
           Bukan cuma belajar lebih rapi. Belajar jadi terasa milik siswa.
         </h2>
@@ -1098,7 +1098,7 @@ function CertificateSection() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <div className="absolute -right-4 -top-4 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl sm:block">
-            <p className="text-xs font-black uppercase text-[#f9c74f]">Preview di profil siswa</p>
+            <p className="text-xs font-black uppercase text-[#F4B400]">Preview di profil siswa</p>
             <p className="font-heading text-lg font-black">Muncul setelah kelas selesai</p>
           </div>
           <CertificateMockup />
@@ -1122,14 +1122,14 @@ function CertificateMockup() {
               <p className="text-xs font-black uppercase text-slate-400">Contoh Sertifikat</p>
             </div>
           </div>
-          <p className="hidden text-right text-xs font-black uppercase text-[#2563eb] sm:block">
+          <p className="hidden text-right text-xs font-black uppercase text-[#0E3A5F] sm:block">
             No. BB-DTC-2026-001
           </p>
         </div>
 
         <div className="py-8 text-center">
           <Award className="mx-auto text-[#f59e0b]" size={64} />
-          <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-[#2563eb]">
+          <p className="mt-4 text-xs font-black uppercase tracking-[0.22em] text-[#0E3A5F]">
             Sertifikat Kelas Detektif
           </p>
           <h3 className="font-heading mx-auto mt-3 max-w-xl text-4xl font-black leading-tight sm:text-5xl">
@@ -1156,7 +1156,7 @@ function CertificateMockup() {
             ["Proyek akhir", "Laporan kasus sederhana"],
           ].map(([title, text]) => (
             <div className="rounded-[8px] bg-[#f8fafc] p-4" key={title}>
-              <Medal className="text-[#2563eb]" size={22} />
+              <Medal className="text-[#0E3A5F]" size={22} />
               <p className="font-heading mt-2 font-black">{title}</p>
               <p className="mt-1 text-sm font-bold leading-5 text-slate-500">{text}</p>
             </div>
@@ -1211,7 +1211,7 @@ function DashboardPreview() {
     <div className="rounded-[8px] border border-slate-200 bg-white p-3 shadow-xl sm:p-5">
       <div className="grid gap-4 sm:grid-cols-3">
         {[
-          [Target, "3", "prioritas belajar", "#2563eb"],
+          [Target, "3", "prioritas belajar", "#F4B400"],
           [BarChart3, "5", "fondasi dipetakan", "#22c55e"],
           [ClipboardCheck, "12", "misi personal", "#ff6b6b"],
         ].map(([Icon, value, label, color], index) => (
@@ -1232,7 +1232,7 @@ function DashboardPreview() {
         ))}
       </div>
       <div className="mt-4 rounded-[8px] bg-[#172033] p-4 text-white sm:p-5">
-        <HeartHandshake className="text-[#f9c74f]" size={28} />
+        <HeartHandshake className="text-[#F4B400]" size={28} />
         <h3 className="font-heading mt-4 text-2xl font-black">
           Jalur belajar berbasis tujuan siswa
         </h3>
@@ -1270,7 +1270,7 @@ function PremiumValue() {
       <div className="surface-grid absolute inset-0 opacity-20" />
       <div className="relative mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase text-[#f9c74f]">Kenapa bernilai</p>
+          <p className="text-sm font-black uppercase text-[#F4B400]">Kenapa bernilai</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Sekolah tidak membeli aplikasi. Sekolah membeli kejelasan arah belajar.
           </h2>
@@ -1297,7 +1297,7 @@ function PremiumValue() {
               viewport={{ once: true }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <span className="grid size-12 place-items-center rounded-[8px] bg-white text-[#2563eb] shadow-[0_6px_0_rgba(255,255,255,0.25)]">
+              <span className="grid size-12 place-items-center rounded-[8px] bg-white text-[#0E3A5F] shadow-[0_6px_0_rgba(255,255,255,0.25)]">
                 <Icon size={25} />
               </span>
               <h3 className="font-heading mt-4 text-xl font-black">{title as string}</h3>
@@ -1315,7 +1315,7 @@ function PricingSignal() {
     <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
       <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="overflow-hidden rounded-[8px] border border-slate-200 bg-white shadow-xl">
-          <div className="bg-[linear-gradient(135deg,#22c55e,#2563eb)] p-6 text-white sm:p-7">
+          <div className="bg-[linear-gradient(135deg,#4CAF50,#F4B400)] p-6 text-white sm:p-7">
             <p className="text-sm font-black uppercase text-white/70">Pilot sekolah</p>
             <h2 className="font-heading mt-2 text-3xl font-black sm:text-4xl">
               Mulai kecil. Tunjukkan hasil. Baru skalakan.
@@ -1378,7 +1378,7 @@ function PilotPackage() {
     <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
       <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
-          <p className="text-sm font-black uppercase text-[#2563eb]">Paket pilot</p>
+          <p className="text-sm font-black uppercase text-[#0E3A5F]">Paket pilot</p>
           <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
             Validasi di satu kelas sebelum sekolah berinvestasi lebih besar.
           </h2>
@@ -1402,7 +1402,7 @@ function PilotPackage() {
               whileHover={{ y: -4 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <Icon className="text-[#2563eb]" size={24} />
+              <Icon className="text-[#0E3A5F]" size={24} />
               <h3 className="font-heading mt-4 text-xl font-black">{title as string}</h3>
               <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{text as string}</p>
             </motion.div>
@@ -1437,7 +1437,7 @@ function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
             >
               <div className="flex gap-3">
-                <span className="grid size-10 shrink-0 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+                <span className="grid size-10 shrink-0 place-items-center rounded-[8px] bg-[#FFF3E0] text-[#0E3A5F]">
                   <HelpCircle size={21} />
                 </span>
                 <div className="min-w-0">

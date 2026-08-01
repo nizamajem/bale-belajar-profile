@@ -10,7 +10,7 @@ export default function ContactPage() {
     <main className="surface-grid min-h-screen px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <section className="mx-auto max-w-3xl rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <Link
-          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#2563eb]"
+          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#0E3A5F]"
           href="/"
         >
           <ArrowLeft size={18} />
@@ -22,7 +22,7 @@ export default function ContactPage() {
         </h1>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <a className="rounded-[8px] bg-[#f8fafc] p-5 transition hover:-translate-y-0.5 hover:shadow-md" href={`mailto:${email}`}>
-            <Mail className="text-[#2563eb]" size={26} />
+            <Mail className="text-[#0E3A5F]" size={26} />
             <p className="font-heading mt-4 text-xl font-black">Email</p>
             <p className="mt-1 break-words font-bold text-slate-600">{email}</p>
           </a>

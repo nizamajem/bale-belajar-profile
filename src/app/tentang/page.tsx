@@ -27,7 +27,7 @@ export default function AboutPage() {
     <main className="surface-grid min-h-screen px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <Link
-          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#2563eb]"
+          className="mb-6 inline-flex items-center gap-2 font-heading font-black text-[#0E3A5F]"
           href="/"
         >
           <ArrowLeft size={18} />
@@ -39,7 +39,7 @@ export default function AboutPage() {
           className="rounded-[8px] border border-slate-200 bg-white p-6 shadow-sm sm:p-8"
           initial={{ opacity: 0, y: 16 }}
         >
-          <p className="text-sm font-black uppercase text-[#2563eb]">
+          <p className="text-sm font-black uppercase text-[#0E3A5F]">
             Kenapa BaleBelajar ada
           </p>
           <h1 className="hero-title text-balance-soft font-heading mt-3 font-black leading-[1.05] text-[#172033]">
@@ -73,7 +73,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <span className="grid size-11 place-items-center rounded-[8px] bg-[#eff6ff] text-[#2563eb]">
+              <span className="grid size-11 place-items-center rounded-[8px] bg-[#FFF3E0] text-[#0E3A5F]">
                 <item.icon size={22} />
               </span>
               <h3 className="font-heading mt-4 text-lg font-black">{item.title}</h3>
@@ -87,7 +87,7 @@ export default function AboutPage() {
           className="mt-5 overflow-hidden rounded-[8px] bg-[#172033] p-6 text-white shadow-[0_10px_0_#0f172a] sm:p-8"
           initial={{ opacity: 0, y: 16 }}
         >
-          <Compass className="text-[#f9c74f]" size={26} />
+          <Compass className="text-[#F4B400]" size={26} />
           <h2 className="font-heading mt-4 text-2xl font-black sm:text-3xl">
             Siswamu pintar tapi mulai kehilangan penasaran? Kami mau bantu.
           </h2>
