@@ -71,7 +71,7 @@ export default function PilotPage() {
                 [Sparkles, "Didampingi", "Tim membantu membaca fondasi dan menyusun contoh misi belajar."],
               ].map(([Icon, title, text]) => (
                 <div className="rounded-[8px] bg-white/10 p-4" key={title as string}>
-                  <Icon className="text-[#22c55e]" size={22} />
+                  <Icon className="text-[#0E3A5F]" size={22} />
                   <p className="font-heading mt-3 font-black">{title as string}</p>
                   <p className="mt-1 text-sm font-semibold leading-6 text-slate-300">
                     {text as string}
@@ -150,7 +150,7 @@ export default function PilotPage() {
                   </div>
                 ) : null}
                 <button
-                  className="flex w-full items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] active:translate-y-1 active:shadow-none disabled:opacity-70"
+                  className="flex w-full items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_7px_0_#C28F00] active:translate-y-1 active:shadow-none disabled:opacity-70"
                   disabled={loading}
                   type="submit"
                 >

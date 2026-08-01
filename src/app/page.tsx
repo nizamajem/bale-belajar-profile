@@ -236,12 +236,12 @@ function SimpleHero() {
     <section className="surface-grid relative overflow-hidden bg-[#f7fbff]">
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 text-center sm:px-6 lg:px-8">
         <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 14 }}>
-          <div className="mx-auto mb-6 grid size-32 place-items-center rounded-[8px] bg-[#22c55e] shadow-[0_10px_0_#129447] sm:size-40">
+          <div className="mx-auto mb-6 grid size-32 place-items-center rounded-[8px] bg-[#F4B400] shadow-[0_10px_0_#C28F00] sm:size-40">
             <div className="relative size-24 rounded-[8px] bg-white sm:size-28">
               <div className="absolute left-6 top-8 size-4 rounded-full bg-[#172033] sm:left-7" />
               <div className="absolute right-6 top-8 size-4 rounded-full bg-[#172033] sm:right-7" />
               <div className="absolute left-1/2 top-14 h-4 w-10 -translate-x-1/2 rounded-b-full border-b-[6px] border-[#172033]" />
-              <BookOpen className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#22c55e]" size={28} />
+              <BookOpen className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#0E3A5F]" size={28} />
             </div>
           </div>
 
@@ -255,7 +255,7 @@ function SimpleHero() {
 
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-6 py-4 font-heading font-black text-white shadow-[0_8px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-6 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_8px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
               Coba Pilot Sekolah
@@ -263,7 +263,7 @@ function SimpleHero() {
             </Link>
             <a
               className="inline-flex items-center justify-center gap-2 rounded-[8px] border-2 border-slate-200 bg-white px-6 py-4 font-heading font-black text-slate-700 shadow-[0_8px_0_#d8e2ef] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
-              href={`${appUrl}/student/login`}
+              href={`${appUrl}/login`}
             >
               Masuk Platform
             </a>
@@ -353,7 +353,7 @@ function Hero() {
             transition={{ delay: 0.18 }}
           >
             <Link
-              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-6 py-4 font-heading font-black text-white shadow-[0_8px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-6 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_8px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
               Ajukan Pilot Sekolah
@@ -397,7 +397,7 @@ function Hero() {
                   className="inline-flex items-center gap-2 rounded-full bg-white/88 px-4 py-2 text-sm font-black text-slate-600 shadow-sm"
                   key={item}
                 >
-                  <Check className="text-[#22c55e]" size={16} />
+                  <Check className="text-[#0E3A5F]" size={16} />
                   {item}
                 </span>
               ),
@@ -434,7 +434,7 @@ function Navbar() {
     <header className="sticky top-0 z-40 max-w-full border-b border-slate-200 bg-white/88 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <Link className="flex shrink-0 items-center gap-3" href="/">
-          <span className="grid size-11 place-items-center rounded-[8px] bg-[#22c55e] text-white shadow-[0_6px_0_#129447]">
+          <span className="grid size-11 place-items-center rounded-[8px] bg-[#F4B400] text-[#0E3A5F] shadow-[0_6px_0_#C28F00]">
             <BookOpen size={24} strokeWidth={3} />
           </span>
           <span className="font-heading text-lg font-black sm:text-xl">BaleBelajar</span>
@@ -451,13 +451,13 @@ function Navbar() {
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <Link
-            className="hidden rounded-[8px] bg-[#22c55e] px-4 py-3 font-heading text-sm font-black text-white shadow-[0_5px_0_#129447] sm:inline-flex"
+            className="hidden rounded-[8px] bg-[#F4B400] px-4 py-3 font-heading text-sm font-black text-[#0E3A5F] shadow-[0_5px_0_#C28F00] sm:inline-flex"
             href="/pilot"
           >
             Coba Pilot
           </Link>
           <Link
-            className="rounded-[8px] bg-[#22c55e] px-3 py-3 font-heading text-xs font-black text-white shadow-[0_5px_0_#129447] sm:hidden"
+            className="rounded-[8px] bg-[#F4B400] px-3 py-3 font-heading text-xs font-black text-[#0E3A5F] shadow-[0_5px_0_#C28F00] sm:hidden"
             href="/pilot"
           >
             Pilot
@@ -500,12 +500,12 @@ function Navbar() {
 function MascotOrbit() {
   return (
     <div className="pointer-events-none absolute -left-2 -top-6 z-10 hidden lg:block">
-      <div className="bob-tilt rounded-[8px] bg-[#22c55e] p-4 shadow-[0_12px_0_#129447]">
+      <div className="bob-tilt rounded-[8px] bg-[#F4B400] p-4 shadow-[0_12px_0_#C28F00]">
         <div className="relative size-24 rounded-[8px] bg-white">
           <div className="blink-soft absolute left-6 top-8 size-4 rounded-full bg-[#172033]" />
           <div className="blink-soft absolute right-6 top-8 size-4 rounded-full bg-[#172033]" />
           <div className="absolute left-1/2 top-14 h-4 w-10 -translate-x-1/2 rounded-b-full border-b-[6px] border-[#172033]" />
-          <BookOpen className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#22c55e]" size={24} />
+          <BookOpen className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[#0E3A5F]" size={24} />
         </div>
       </div>
     </div>
@@ -583,7 +583,7 @@ function HeroMockup() {
     <div className="float-soft relative mx-auto w-full overflow-hidden rounded-[8px] border border-slate-200 bg-white p-2 shadow-[0_26px_80px_rgba(23,32,51,0.18)] sm:p-4">
       <div className="card-rise sparkle-pop absolute right-4 top-16 hidden rounded-[8px] bg-white px-4 py-3 shadow-xl md:block">
         <p className="text-xs font-black uppercase text-slate-400">Tampilan siswa</p>
-        <p className="font-heading text-lg font-black text-[#22c55e]">Bukan dashboard guru</p>
+        <p className="font-heading text-lg font-black text-[#0E3A5F]">Bukan dashboard guru</p>
       </div>
       <div className="card-rise absolute bottom-4 left-5 hidden rounded-[8px] bg-[#172033] px-4 py-3 text-white shadow-xl md:block [animation-delay:0.8s]">
         <p className="text-xs font-black uppercase text-[#F4B400]">Ini yang dilihat siswa</p>
@@ -617,7 +617,7 @@ function HeroMockup() {
                     Segera dibuka
                   </span>
                 ) : (
-                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-[8px] bg-[#22c55e] px-3 py-2 text-xs font-black text-white shadow-[0_4px_0_#129447]">
+                  <span className="inline-flex w-full items-center justify-center gap-1.5 rounded-[8px] bg-[#F4B400] px-3 py-2 text-xs font-black text-[#0E3A5F] shadow-[0_4px_0_#C28F00]">
                     Mulai dari sini
                     <ArrowRight size={13} />
                   </span>
@@ -635,7 +635,7 @@ function HeroMockup() {
           <div className="grid gap-2 sm:grid-cols-3">
             {["Fondasi", "Misi profesi", "Karya kecil"].map((item, index) => (
               <div className="rounded-[8px] bg-white/10 p-3" key={item}>
-                <span className="grid size-8 place-items-center rounded-[8px] bg-[#22c55e] font-heading font-black shadow-[0_4px_0_#129447]">
+                <span className="grid size-8 place-items-center rounded-[8px] bg-[#F4B400] font-heading font-black shadow-[0_4px_0_#C28F00]">
                   {index + 1}
                 </span>
                 <p className="mt-3 text-sm font-black">{item}</p>
@@ -657,7 +657,7 @@ function TrustStrip() {
         </span>
         {trustItems.map((item) => (
           <div className="inline-flex items-center gap-2 text-sm font-black text-slate-200" key={item}>
-            <ShieldCheck className="text-[#22c55e]" size={18} />
+            <ShieldCheck className="text-[#0E3A5F]" size={18} />
             {item}
           </div>
         ))}
@@ -748,7 +748,7 @@ function CuriosityLoop() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
-                className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+                className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_6px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
                 href="/pilot"
               >
                 Ajukan Pilot Sekolah
@@ -925,7 +925,7 @@ function DetectiveShowcase() {
           </div>
 
           <Link
-            className="mt-7 inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+            className="mt-7 inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_6px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
             href="/pilot"
           >
             Ajukan Pilot Sekolah
@@ -963,7 +963,7 @@ function Problems() {
               whileHover={{ y: -4 }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <Check className="mb-3 text-[#22c55e]" size={22} />
+              <Check className="mb-3 text-[#0E3A5F]" size={22} />
               <p className="font-bold leading-7 text-slate-600">{item}</p>
             </motion.div>
           ))}
@@ -996,7 +996,7 @@ function Workflow() {
               whileHover={{ y: -5, backgroundColor: "rgba(255,255,255,0.14)" }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <span className="grid size-10 place-items-center rounded-[8px] bg-[#22c55e] font-heading font-black shadow-[0_5px_0_#129447]">
+              <span className="grid size-10 place-items-center rounded-[8px] bg-[#F4B400] font-heading font-black shadow-[0_5px_0_#C28F00]">
                 {index + 1}
               </span>
               <p className="font-heading mt-5 text-xl font-black">{title}</p>
@@ -1075,7 +1075,7 @@ function CertificateSection() {
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_7px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
               Coba pilot sekolah
@@ -1114,7 +1114,7 @@ function CertificateMockup() {
       <div className="overflow-hidden rounded-[8px] border-[10px] border-[#172033] bg-[#fffdf7] p-5 sm:p-7">
         <div className="flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="grid size-12 place-items-center rounded-[8px] bg-[#22c55e] text-white shadow-[0_5px_0_#129447]">
+            <span className="grid size-12 place-items-center rounded-[8px] bg-[#F4B400] text-[#0E3A5F] shadow-[0_5px_0_#C28F00]">
               <BookOpen size={25} />
             </span>
             <div>
@@ -1190,7 +1190,7 @@ function DashboardSection() {
       id="dashboard"
     >
       <div>
-        <p className="text-sm font-black uppercase text-[#22c55e]">
+        <p className="text-sm font-black uppercase text-[#0E3A5F]">
           Intip dashboard
         </p>
         <h2 className="section-title text-balance-soft font-heading mt-2 font-black">
@@ -1252,7 +1252,7 @@ function DashboardPreview() {
               </div>
               <div className="h-3 overflow-hidden rounded-full bg-white/12">
                 <div
-                  className="meter-sweep progress-grow h-full rounded-full bg-[#22c55e]"
+                  className="meter-sweep progress-grow h-full rounded-full bg-[#F4B400]"
                   style={{ "--target-width": width } as React.CSSProperties}
                 />
               </div>
@@ -1279,7 +1279,7 @@ function PremiumValue() {
             misi, dan laporan progres.
           </p>
           <Link
-            className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_7px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+            className="mt-6 inline-flex items-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_7px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
             href="/pilot"
           >
             Ajukan Pilot Sekolah
@@ -1354,7 +1354,7 @@ function PricingSignal() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, x: 0 }}
               >
-                <Check className="mb-2 text-[#22c55e]" size={21} />
+                <Check className="mb-2 text-[#0E3A5F]" size={21} />
                 <p className="font-heading text-lg font-black">{title}</p>
                 <p className="mt-1 text-sm font-semibold leading-6 text-slate-600">{text}</p>
               </motion.div>
@@ -1460,7 +1460,7 @@ function FAQSection() {
 function PilotSection() {
   return (
     <section className="px-4 pb-14 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#22c55e] text-white shadow-[0_10px_0_#129447] lg:grid-cols-[1fr_0.8fr]">
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[8px] bg-[#F4B400] text-[#0E3A5F] shadow-[0_10px_0_#C28F00] lg:grid-cols-[1fr_0.8fr]">
         <div className="p-7 sm:p-9">
           <h2 className="font-heading text-3xl font-black sm:text-4xl">
             Mau coba BaleBelajar di sekolah Anda?
@@ -1478,7 +1478,7 @@ function PilotSection() {
         </div>
         <div className="hidden bg-white/14 p-7 lg:block">
           <div className="rounded-[8px] bg-white p-5 text-[#172033]">
-            <MessageCircle className="text-[#22c55e]" size={28} />
+            <MessageCircle className="text-[#0E3A5F]" size={28} />
             <p className="font-heading mt-4 text-2xl font-black">
               Hasil belajar dibuat lebih jelas.
             </p>

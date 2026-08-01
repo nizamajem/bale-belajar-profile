@@ -96,7 +96,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
-              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#22c55e] px-5 py-4 font-heading font-black text-white shadow-[0_6px_0_#129447] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#F4B400] px-5 py-4 font-heading font-black text-[#0E3A5F] shadow-[0_6px_0_#C28F00] transition hover:-translate-y-0.5 active:translate-y-1 active:shadow-none"
               href="/pilot"
             >
               Ajukan Pilot Sekolah
