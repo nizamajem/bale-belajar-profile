@@ -59,6 +59,7 @@ services:
       NODE_ENV: production
       PORT: 4000
       API_PREFIX: api/v1
+      PREPARE_CURRICULUM_ON_START: "true"
       DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/bale_belajar
       JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
@@ -136,6 +137,9 @@ done
 echo "-> docker compose up -d --build (bisa beberapa menit)..."
 cd "$HOME_DIR"
 docker compose up -d --build
+
+echo "-> Menyiapkan database dan kurikulum production..."
+docker compose exec -T be npm run prepare:curriculum
 
 echo
 echo "-> Status container:"
