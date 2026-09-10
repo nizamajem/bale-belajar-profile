@@ -170,8 +170,10 @@ wait_port "frontend app" 3000 60
 wait_port "profile site" 3001 60
 
 echo "-> Menyiapkan database dan kurikulum production..."
-"${DOCKER_COMPOSE[@]}" exec -T be npm run prepare:curriculum
-"${DOCKER_COMPOSE[@]}" exec -T be npm run seed:vocab
+"${DOCKER_COMPOSE[@]}" exec -T be npm run prepare:production-data
+if ! "${DOCKER_COMPOSE[@]}" exec -T be npm run readiness; then
+  echo "!! Readiness masih punya warning/blocker, tetapi data production dan vocab sudah disiapkan." >&2
+fi
 
 wait_port "backend API setelah seed" 4000 30
 wait_port "frontend app setelah seed" 3000 30
