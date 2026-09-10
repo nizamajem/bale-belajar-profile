@@ -7,6 +7,32 @@ COMPOSE_FILE="$HOME_DIR/docker-compose.yml"
 
 echo "== Bale Belajar deploy script =="
 
+if docker compose version >/dev/null 2>&1; then
+  DOCKER_COMPOSE=(docker compose)
+else
+  DOCKER_COMPOSE=(sudo docker compose)
+fi
+
+wait_port() {
+  local name="$1"
+  local port="$2"
+  local max_attempts="${3:-60}"
+
+  echo "-> Menunggu $name di 127.0.0.1:$port..."
+  for attempt in $(seq 1 "$max_attempts"); do
+    if timeout 2 bash -c "cat < /dev/null > /dev/tcp/127.0.0.1/$port" >/dev/null 2>&1; then
+      echo "   $name siap."
+      return 0
+    fi
+    sleep 2
+  done
+
+  echo "!! $name belum merespons di 127.0.0.1:$port." >&2
+  "${DOCKER_COMPOSE[@]}" ps >&2 || true
+  "${DOCKER_COMPOSE[@]}" logs --tail=120 be fe profile >&2 || true
+  return 1
+}
+
 if [ -f "$ENV_FILE" ]; then
   echo "-> .env sudah ada, dilewati (tidak ditimpa)."
 else
@@ -59,7 +85,8 @@ services:
       NODE_ENV: production
       PORT: 4000
       API_PREFIX: api/v1
-      PREPARE_CURRICULUM_ON_START: "true"
+      PREPARE_CURRICULUM_ON_START: "false"
+      SEED_VOCAB_ON_START: "false"
       DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/bale_belajar
       JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
@@ -136,14 +163,23 @@ done
 
 echo "-> docker compose up -d --build (bisa beberapa menit)..."
 cd "$HOME_DIR"
-docker compose up -d --build
+"${DOCKER_COMPOSE[@]}" up -d --build
+
+wait_port "backend API" 4000 90
+wait_port "frontend app" 3000 60
+wait_port "profile site" 3001 60
 
 echo "-> Menyiapkan database dan kurikulum production..."
-docker compose exec -T be npm run prepare:curriculum
+"${DOCKER_COMPOSE[@]}" exec -T be npm run prepare:curriculum
+"${DOCKER_COMPOSE[@]}" exec -T be npm run seed:vocab
+
+wait_port "backend API setelah seed" 4000 30
+wait_port "frontend app setelah seed" 3000 30
+wait_port "profile site setelah seed" 3001 30
 
 echo
 echo "-> Status container:"
-docker compose ps
+"${DOCKER_COMPOSE[@]}" ps
 
 echo
 echo "== Selesai =="
